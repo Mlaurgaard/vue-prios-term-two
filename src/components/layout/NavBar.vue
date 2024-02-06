@@ -59,11 +59,11 @@
       <!-- ___________ -->
       <!-- NAV DESKTOP -->
       <!-- LOGO -->
-      <RouterLink class="font-mono text-2xl pr-8 py-2.5" to="/" role="button"
+      <RouterLink class="font-mono text-2xl py-2.5" to="/" role="button"
         >AuraAttire</RouterLink
       >
       <!-- PAGES -->
-      <div class="hidden lg:flex space-x-2">
+      <div class="hidden lg:flex space-x-2 pl-8">
         <RouterLink
           class="rounded p-3 hover:bg-gray-200 focus:bg-gray-300 active:bg-gray-400"
           to="/products"
