@@ -1,121 +1,135 @@
 <template>
-  <nav class="w-full pl-4 border-b-2 sticky top-0 bg-base-100">
-    <div class="flex items-center">
-      <!-- BURGER MENU/X ICONS // SIDEBAR TRIGGER-->
-      <div class="navbar-burger lg:hidden pr-4 z-30">
-        <a @click.prevent="toggleMenu = !toggleMenu" class="" role="button">
-          <span @click="toggleIcon = !toggleIcon">
-            <!-- BURGER ICON -->
-            <svg
-              v-if="!toggleIcon"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              class="w-6 h-6"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5"
-              />
-            </svg>
-            <!-- CLOSE ICON -->
-            <svg
-              v-else="toggleIcon"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              class="w-6 h-6"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M6 18 18 6M6 6l12 12"
-              />
-            </svg>
-          </span>
-        </a>
+  <nav>
+    <div class="drawer">
+      <input
+        id="my-drawer-3"
+        type="checkbox"
+        class="drawer-toggle"
+        ref="drawerCheckbox"
+      />
+      <div class="drawer-content flex flex-col min-h-screen">
+        <!-- Navbar -->
+        <div class="w-full navbar shadow-md bg-base-100 h-[64px] z-10">
+          <div class="container md:px-4">
+            <div class="flex-none lg:hidden">
+              <label for="my-drawer-3" class="btn btn-square btn-ghost">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  class="inline-block w-6 h-6 stroke-current"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h16M4 18h16"
+                  ></path>
+                </svg>
+              </label>
+            </div>
+            <div class="pl-0 pl-8">
+              <router-link to="/">
+                <p class="font-mono">GeneralStore</p>
+              </router-link>
+            </div>
+            <!-- Sidebar Menu on smaller screens -->
+            <div class="flex-none hidden lg:block">
+              <ul class="menu menu-horizontal flex items-center font-bold">
+                <!-- Navbar menu content here -->
+
+                <li
+                  class="rounded"
+                  :class="{
+                    'focus:bg-primary bg-primary': $route.path === '/products',
+                  }"
+                >
+                  <router-link to="/products">Products</router-link>
+                </li>
+                <li
+                  class="rounded p-3"
+                  :class="{
+                    'focus:bg-primary bg-secondary': $route.path === '/about',
+                  }"
+                >
+                  <router-link to="/about">About</router-link>
+                </li>
+                <li
+                  class="rounded"
+                  :class="{
+                    'focus:bg-primary bg-secondary': $route.path === '/signup',
+                  }"
+                >
+                  <router-link to="/signup">Sign up</router-link>
+                </li>
+                <li
+                  class="rounded"
+                  :class="{
+                    'focus:bg-primary bg-secondary': $route.path === '/login',
+                  }"
+                >
+                  <router-link to="/login">Login</router-link>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- Page content here -->
+        <RouterView />
+        <Footer />
       </div>
-      <!-- ___________ -->
-      <!-- NAV DESKTOP -->
-      <!-- LOGO -->
-      <RouterLink class="font-mono text-2xl py-2.5" to="/" role="button"
-        >AuraAttire</RouterLink
-      >
-      <!-- PAGES -->
-      <div class="hidden lg:flex space-x-2 pl-8">
-        <RouterLink
-          class="rounded p-3 hover:bg-gray-200 focus:bg-gray-300 active:bg-gray-400"
-          to="/products"
-          role="button"
-          >Products</RouterLink
-        >
-        <RouterLink
-          class="rounded p-3 hover:bg-gray-200 focus:bg-gray-300 active:bg-gray-400"
-          to="/about"
-          role="button"
-          >About</RouterLink
-        >
-        <RouterLink
-          class="rounded p-3 hover:bg-gray-200 focus:bg-gray-300 active:bg-gray-400"
-          to="/user"
-          role="button"
-          >My Page</RouterLink
-        >
-      </div>
-      <!-- SIGNUP / LOGIN -->
-      <div class="hidden lg:flex ml-auto space-x-2 pr-4">
-        <button
-          class="rounded p-3 hover:bg-gray-200 focus:bg-gray-300 active:bg-gray-400"
-        >
-          Sign up
-        </button>
-        <button
-          class="rounded p-3 hover:bg-gray-200 focus:bg-gray-300 active:bg-gray-400"
-        >
-          Log in
-        </button>
+      <div class="drawer-side z-50">
+        <label for="my-drawer-3" class="drawer-overlay"></label>
+        <ul class="menu py-4 w-80 min-h-full bg-base-300 font-bold">
+          <!-- Sidebar content here -->
+          <li>
+            <router-link to="/" @click="handleClick()">Home</router-link>
+            <router-link to="/products" @click="handleClick()"
+              >Products</router-link
+            >
+            <router-link to="/about" @click="handleClick()">About</router-link>
+          </li>
+          <li class="mb-0 mt-auto">
+            <router-link class="mb-0 mt-auto" to="/login" @click="handleClick()"
+              >Login</router-link
+            >
+            <router-link class="" to="/signup" @click="handleClick()"
+              >Sign up</router-link
+            >
+          </li>
+        </ul>
       </div>
     </div>
   </nav>
-        <!-- NAV MOBILE -->
-      <!-- MOBILE NAV CONTENT (SIDEBAR) -->
-      <div class="lg:hidden flex" v-show="toggleMenu">
-        <div class="flex flex-col bg-blue-100 w-80 min-h-screen z-90">
-          <RouterLink class="" to="/products" role="button"
-            >Products</RouterLink
-          >
-          <RouterLink class="" to="/about" role="button">About</RouterLink>
-          <RouterLink class="" to="/user" role="button">My Page</RouterLink>
-          <!-- SIGNUP / LOGIN -->
-          <div class="flex">
-            <button class="">Sign up</button>
-            <button class="">Log in</button>
-          </div>
-        </div>
-      </div>
-  <RouterView class="min-h-screen"/>
-  
-  <Footer />
 </template>
 
 <script setup>
-/*
-Imports
-*/
+import { ref, defineAsyncComponent, computed } from "vue";
 import { RouterLink, RouterView } from "vue-router";
-import Footer from "@/components/layout/Footer.vue";
-import { ref } from "vue";
+import { useRoute } from "vue-router";
 
-/* Mobile nav */
-const toggleIcon = ref(false);
+const Footer = defineAsyncComponent(() =>
+  import("@/components/layout/Footer.vue")
+);
 
-const toggleMenu = ref(false);
+//refs
+const drawerCheckbox = ref(null);
 
+// handle click on navbar mobile
+const handleClick = () => {
+  drawerCheckbox.value.checked = !drawerCheckbox.value.checked;
+};
+// router const
+const route = useRoute();
 
-
+const shouldShowFooter = computed(() => {
+  return !route.path.includes("/mooc/");
+});
 </script>
+
+<style scoped>
+.menu :where(li:not(.menu-title) > *:not(ul):not(details):not(.menu-title)),
+.menu :where(li:not(.menu-title) > details > summary:not(.menu-title)) {
+  border-radius: 0px !important;
+}
+</style>
