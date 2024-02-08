@@ -18,14 +18,19 @@
         <button class=""></button>
       </div>
     </div>
+    <!-- Buttons -->
     <div>
-      <!-- Buttons -->
       <div class="mx-auto space-x-7 ml-24 mt-2">
         <button class="ml-1 text-xs btn-link">Forgot password?</button>
         <button class="p-2 rounded bg-gray-300 active:bg-gray-400 text-xs">
           LOGIN &blacktriangleright;
         </button>
       </div>
+    </div>
+    <div class="mx-auto my-20">
+      <p class="text-sm">Don't have a user?
+        <router-link class="text-sm btn-link" to="/signup">Click here!</router-link>
+      </p>
     </div>
   </div>
 </template>
@@ -35,4 +40,6 @@
 import { ref } from "vue";
 
 const togglePassword = ref(false);
+
+
 </script>
