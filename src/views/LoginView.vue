@@ -1,7 +1,7 @@
 <template>
   <!-- Login Container -->
-  <div class="flex flex-col w-96 h-96 bg-base-200 mx-auto my-auto">
-    <h3 class="mx-auto mt-12 font-bold">Login</h3>
+  <div class="flex flex-col w-96 h-96 bg-base-300 mx-auto my-auto">
+    <h3 class="mx-auto mt-12 font-bold ">Log in</h3>
     <!-- Username -->
     <div class="mx-auto mt-6">
       <div class="my-auto">
@@ -22,8 +22,8 @@
     <div>
       <div class="mx-auto space-x-7 ml-24 mt-2">
         <button class="ml-1 text-xs btn-link">Forgot password?</button>
-        <button class="p-2 rounded bg-gray-300 active:bg-gray-400 text-xs">
-          LOGIN &blacktriangleright;
+        <button class="p-2 rounded bg-green-400 active:bg-green-200 text-xs font-semibold">
+          Login &triangleright;
         </button>
       </div>
     </div>

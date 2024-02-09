@@ -1,6 +1,6 @@
 <template>
     <!-- Register Container -->
-    <div class="flex flex-col w-96 h-96 bg-base-200 mx-auto my-auto">
+    <div class="flex flex-col w-96 h-96 bg-base-300 mx-auto my-auto">
       <h3 class="mx-auto mt-4 font-bold">Register</h3>
       <!-- First name -->
       <div class="mx-auto mt-2">
@@ -41,7 +41,7 @@
         <!-- Buttons -->
         <div class="mx-auto space-x-7 ml-52 mt-2">
           <button class="p-2 rounded bg-gray-300 active:bg-gray-400 text-xs">
-            Register &blacktriangleright;
+            Confirm &blacktriangleright;
           </button>
         </div>
       </div>
