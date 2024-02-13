@@ -1,10 +1,14 @@
 <template>
   <!-- <pre>{{ myProducts }}</pre> -->
-  <div v-if="isLoading">
+  <div v-if="MyProductStore.isLoading">
+    <span>Loading Products...</span>
     <span class="loading loading-spinner text-neutral"></span>
   </div>
-  <div class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-4 mb-10">
-    <div v-for="product in myProducts.data" class="flex">
+  <div
+    class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-4 mb-10"
+    v-else-if="!MyProductStore.isLoading"
+  >
+    <div v-for="product in MyProductStore.myProducts" class="flex">
       <div class="card w-96 bg-base-100 shadow-xl">
         <figure>
           <img :src="product.image" alt="Shoes" height="50px" width="50px" />
@@ -22,34 +26,41 @@
 </template>
 
 <script setup>
-/* 
-imports 
+/*
+imports
 */
 import { ref, onMounted } from "vue";
-import axios from "axios";
 
-const myProducts = ref([]);
+// store imports
+import { useMyProductStore } from "@/stores/MyProductStore";
 
-const isLoading = ref(true);
+// stores
+const MyProductStore = useMyProductStore();
 
-const getProductsFromApi = async () => {
-  try {
-    const response = await axios.get("https://fakestoreapi.com/products/", {
-      headers: {
-        "Content-Type": "application/json",
-        // Add other headers as needed
-      },
-    });
-    console.log("response", response);
-    myProducts.value = response;
-    isLoading.value = false;
-  } catch (error) {
-    console.error(error);
-  }
-};
+// async getProductsFromApi() {
+//   isLoading.value = true;
+//   try {
+//     const response = await axios.get("https://fakestoreapi.com/products/", {
+//       headers: {
+//         "Content-Type": "application/json",
+//         // Add other headers as needed
+//       },
+//     });
+//     console.log("response", response);
+//     myProducts.value = response;
+//     this.products =
+
+//   } catch (error) {
+//     console.error(error);
+//   }
+//   finally{
+//    this.isLoading = false;
+//   }
+// };
 
 onMounted(() => {
-  getProductsFromApi();
+  // getProductsFromApi();
+  MyProductStore.getProductsFromApi();
 });
 
 const clickedProduct = (product) => {
