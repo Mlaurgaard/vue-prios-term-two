@@ -5,7 +5,7 @@
       class="flex flex-col h-80 bg-base-100 m-auto my-4 w-80 md:w-6/12 lg:w-9/12 lg:flex-row"
     >
       <!-- user icon -->
-      <div class="mx-auto lg:my-auto lg:w-1/3 lg:flex lg:justify-center">
+      <div class="mx-auto lg:my-auto lg:w-1/4 lg:flex lg:justify-center">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
@@ -19,11 +19,12 @@
           />
         </svg>
       </div>
-      <div class="lg:w-2/3">
+      <div class="lg:w-3/4">
         <div
-          class="flex mx-auto underline justify-center lg:flex lg:flex-row lg:h-1/5 lg:mt-4 lg:justify-center"
+          class="flex mx-auto underline justify-center lg:flex lg:flex-row lg:h-1/5 lg:mt-4 lg:justify-center text-bold"
         >
-          USERNAME
+          {{ myUserStore.myUsers.username }}
+          <!-- <p>{{ userDataFromPinia.lastname }}</p> -->
         </div>
         <!-- space block -->
         <div class="block my-6 lg:hidden"></div>
@@ -33,9 +34,12 @@
             <div class="flex flex-col w-1/2 lg:w-2/3 lg:flex-col">
               <!-- name -->
               <span class="mt-2 mx-auto lg:my-2">Name</span>
-              <span class="mx-auto">DisplayName</span>
+              <span class="mx-auto mb-4"
+                >{{ userDataFromPinia.firstname }}
+                {{ userDataFromPinia.lastName }}</span
+              >
               <!-- space block -->
-              <div class="my-2 lg:my-4 lg:block"></div>
+              <!-- <div class="my-2 lg:my-4 lg:block"></div> -->
               <!-- address -->
               <span class="mt-2 mx-auto lg:my-2">Address</span>
               <span class="mx-auto">DisplayAdress</span>
@@ -45,12 +49,10 @@
             <div class="flex flex-col w-1/2 lg:w-2/3 lg:flex-col">
               <!-- phone -->
               <span class="mt-2 mx-auto lg:my-2">Phone</span>
-              <span class="mx-auto">DisplayNumber</span>
-              <!-- space block -->
-              <div class="my-2 lg:my-4 lg:block"></div>
+              <span class="mx-auto mb-4">{{ myUserStore.myUsers.phone }}</span>
               <!-- Email -->
               <span class="mt-2 mx-auto lg:my-2">Email</span>
-              <span class="mx-auto">DisplayEmail</span>
+              <span class="mx-auto">{{ myUserStore.myUsers.email }}</span>
             </div>
           </div>
           <!-- edit button -->
@@ -93,14 +95,35 @@
 
 <script setup>
 // Imports
-import { onMounted } from "vue";
+import { onMounted, ref } from "vue";
 import { useMyUserStore } from "@/stores/MyUserStore";
 
 // Store imports
 const myUserStore = useMyUserStore();
 
+const testing = () => {
+  myUserStore.getUsersFromApi();
+  testingTwo();
+};
+
+const userDataFromPinia = ref({});
+
+const testingTwo = () => {
+  setTimeout(() => {
+    const userTest = myUserStore.myUsers;
+    console.log("hallo", userTest);
+    // userDataFromPinia.value = userTest.name.firstname;
+    userDataFromPinia.value = {
+      firstname: userTest.name.firstname,
+      lastName: userTest.name.lastname,
+      epicEmail: userTest.email,
+    };
+  }, 500);
+};
+
 // mounts
 onMounted(() => {
-  myUserStore.getUsersFromApi();
+  // userTest.value = myUserStore.myUsers;
+  testing();
 });
 </script>

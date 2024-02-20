@@ -1,17 +1,19 @@
 import { defineStore } from "pinia";
 import axios from "axios";
+import router from "../router";
+import { useStorage } from "@vueuse/core";
+
+// const route = useRoute();
 
 export const useMyUserStore = defineStore("myUserStore", {
   state: () => ({
     myUsers: [],
-    isLoggedIn: false,
     userStatus: false,
+    isValid: useStorage("is-Valid", false),
   }),
   getters: {},
   actions: {
     async getUsersFromApi() {
-      this.isLoggedIn = false;
-      this.userStatus = false;
       try {
         const response = await axios.get("https://fakestoreapi.com/users/1", {
           headers: {
@@ -25,9 +27,38 @@ export const useMyUserStore = defineStore("myUserStore", {
       } catch (error) {
         console.error(error);
       } finally {
-        this.isLoggedIn = true;
-        this.userStatus = true;
       }
+    },
+
+    async userLogin(data) {
+      const dataOfUsers = data;
+      try {
+        const userResponse = await axios.post(
+          "https://fakestoreapi.com/auth/login",
+          dataOfUsers,
+          {
+            headers: {
+              "Content-Type": "application/json",
+              // Add other headers as needed
+            },
+          }
+        );
+        console.log("okeoke", userResponse);
+        // localStorage.setItem("isLoggedIn", true);
+        this.isValid = true;
+        localStorage.setItem("userData", data.username);
+        router.push({ name: "home" });
+      } catch (error) {
+        console.error("error", error);
+      } finally {
+        console.log("congrats!");
+      }
+    },
+    logoutUser() {
+      localStorage.clear();
+      router.push({ name: "home" });
+      console.log("yo");
+      this.isValid = false;
     },
   },
 });

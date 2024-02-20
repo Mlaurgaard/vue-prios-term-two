@@ -68,9 +68,11 @@
             </div>
             <!-- Navbar Right -->
             <div class="rounded w-auto">
+              <!-- Logged out -->
               <!-- login -->
               <button
                 class="p-2 mx-1 rounded hover:bg-gray-200 active:bg-gray-300 font-bolder"
+                v-if="myUserStore.isValid == false"
               >
                 <router-link to="/login">
                   <p class="p-1 px-1 text-sm font-bolder">Login</p>
@@ -79,10 +81,56 @@
               <!-- sign up -->
               <button
                 class="p-2 mx-1 rounded hover:bg-gray-200 active:bg-gray-300 font-bolder"
+                v-if="myUserStore.isValid == false"
               >
                 <router-link to="/signup">
                   <p class="p-1 px-1 text-sm font-bolder">Sign up</p>
                 </router-link>
+              </button>
+              <!-- Logged In -->
+              <button
+                class="p-2 mx-1 rounded hover:bg-gray-200 active:bg-gray-300 font-bolder"
+                v-if="myUserStore.isValid == true"
+                @click=""
+              >
+                <p class="p-1 px-1">
+                  <router-link to="/user">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      class="w-6 h-6"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M18.685 19.097A9.723 9.723 0 0 0 21.75 12c0-5.385-4.365-9.75-9.75-9.75S2.25 6.615 2.25 12a9.723 9.723 0 0 0 3.065 7.097A9.716 9.716 0 0 0 12 21.75a9.716 9.716 0 0 0 6.685-2.653Zm-12.54-1.285A7.486 7.486 0 0 1 12 15a7.486 7.486 0 0 1 5.855 2.812A8.224 8.224 0 0 1 12 20.25a8.224 8.224 0 0 1-5.855-2.438ZM15.75 9a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </router-link>
+                </p>
+              </button>
+              <button
+                class="p-2 mx-1 rounded hover:bg-gray-200 active:bg-gray-300 font-bolder"
+                v-if="myUserStore.isValid == true"
+                @click="myUserStore.logoutUser()"
+              >
+                <p class="p-1 px-1 text-sm font-bolder">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-6 h-6"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M15.75 9V5.25A2.25 2.25 0 0 0 13.5 3h-6a2.25 2.25 0 0 0-2.25 2.25v13.5A2.25 2.25 0 0 0 7.5 21h6a2.25 2.25 0 0 0 2.25-2.25V15m3 0 3-3m0 0-3-3m3 3H9"
+                    />
+                  </svg>
+                </p>
               </button>
             </div>
           </div>
@@ -130,9 +178,14 @@
 </template>
 
 <script setup>
-import { ref, defineAsyncComponent, computed } from "vue";
+import { ref, defineAsyncComponent, computed, onMounted } from "vue";
 import { RouterLink, RouterView } from "vue-router";
 import { useRoute } from "vue-router";
+// store imports
+import { useMyUserStore } from "@/stores/MyUserStore";
+
+// stores
+const myUserStore = useMyUserStore();
 
 const Footer = defineAsyncComponent(() =>
   import("@/components/layout/Footer.vue")
@@ -145,11 +198,22 @@ const drawerCheckbox = ref(null);
 const handleClick = () => {
   drawerCheckbox.value.checked = !drawerCheckbox.value.checked;
 };
-// router const
-const route = useRoute();
 
-const shouldShowFooter = computed(() => {
-  return !route.path.includes("/mooc/");
+const checkIfLoggedIn = ref("");
+
+const isUserLoggedIn = () => {
+  const userStatus = localStorage.getItem("isLoggedIn");
+  if (!userStatus) {
+    localStorage.setItem("isLoggedIn", false);
+    const userStatus = localStorage.getItem("isLoggedIn");
+    checkIfLoggedIn.value = userStatus;
+  }
+
+  checkIfLoggedIn.value = userStatus;
+};
+
+onMounted(() => {
+  isUserLoggedIn();
 });
 </script>
 
