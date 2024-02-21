@@ -14,7 +14,11 @@
           <img :src="product.image" alt="Shoes" height="50px" width="50px" />
         </figure>
         <div class="card-body">
-          <h2 class="card-title line-clamp-2">{{ product.title }}</h2>
+          <h2 class="card-title line-clamp-2">
+            <router-link to="ProductCardsModal">{{
+              product.title
+            }}</router-link>
+          </h2>
           <p class="line-clamp-2">{{ product.description }}</p>
           <div class="card-actions justify-end">
             <button class="btn btn-primary">Buy Now</button>
@@ -36,6 +40,9 @@ import { useMyProductStore } from "@/stores/MyProductStore";
 
 // stores
 const MyProductStore = useMyProductStore();
+
+// modal
+const showContentModal = ref(false);
 
 // async getProductsFromApi() {
 //   isLoading.value = true;

@@ -26,5 +26,26 @@ export const useMyProductStore = defineStore("myProductStore", {
         this.isLoading = false;
       }
     },
+    // async getIdOfProducts(Id) {
+    //   const idOfProduct = Id;
+    //   try {
+    //     const idResponse = await axios.post(
+    //       "https://fakestoreapi.com/products/",
+    //       idOfProduct,
+    //       {
+    //         headers: {
+    //           "Content-Type": "application/json",
+    //           // Add other headers as needed
+    //         },
+    //       }
+    //     );
+    //     console.log("response", idResponse);
+
+    //     this.myProducts = idResponse.data.id;
+    //   } catch (error) {
+    //     console.error(error);
+    //   } finally {
+    //   }
+    // },
   },
 });
