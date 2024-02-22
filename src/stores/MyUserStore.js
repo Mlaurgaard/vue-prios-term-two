@@ -7,21 +7,31 @@ import { useStorage } from "@vueuse/core";
 
 export const useMyUserStore = defineStore("myUserStore", {
   state: () => ({
-    myUsers: [],
-    userStatus: false,
+    myUsers: useStorage("my-users", {}),
+    userToken: useStorage("user-token", {}),
     isValid: useStorage("is-Valid", false),
+    userObject: useStorage("user-object", {}),
+    userStatus: false,
+    isLoading: false,
   }),
-  getters: {},
+  getters: {
+    tokenOfUser() {
+      return this.userToken;
+    },
+    getUsers() {
+      return this.myUsers;
+    },
+  },
   actions: {
     async getUsersFromApi() {
       try {
-        const response = await axios.get("https://fakestoreapi.com/users/1", {
+        const response = await axios.get("https://fakestoreapi.com/users", {
           headers: {
             "Content-Type": "application/json",
             // Add other headers as needed
           },
         });
-        console.log("response", response);
+        console.log("response", response.data);
 
         this.myUsers = response.data;
       } catch (error) {
@@ -29,13 +39,12 @@ export const useMyUserStore = defineStore("myUserStore", {
       } finally {
       }
     },
-
-    async userLogin(data) {
-      const dataOfUsers = data;
+    async userLogin(userinfo) {
+      this.isLoading = true;
       try {
         const userResponse = await axios.post(
           "https://fakestoreapi.com/auth/login",
-          dataOfUsers,
+          userinfo,
           {
             headers: {
               "Content-Type": "application/json",
@@ -44,14 +53,16 @@ export const useMyUserStore = defineStore("myUserStore", {
           }
         );
         console.log("okeoke", userResponse);
-        // localStorage.setItem("isLoggedIn", true);
+
+        this.userToken = userResponse.data;
+        console.log("token", this.userToken);
         this.isValid = true;
-        localStorage.setItem("userData", data.username);
         router.push({ name: "home" });
       } catch (error) {
         console.error("error", error);
       } finally {
         console.log("congrats!");
+        this.isLoading = false;
       }
     },
     logoutUser() {

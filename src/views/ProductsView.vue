@@ -9,7 +9,10 @@
     v-else-if="!MyProductStore.isLoading"
   >
     <div v-for="product in MyProductStore.myProducts" class="flex">
-      <div class="card w-96 bg-base-100 shadow-xl">
+      <div
+        class="card w-96 bg-base-100 shadow-xl"
+        @click="getProductData(product)"
+      >
         <figure>
           <img :src="product.image" alt="Shoes" height="50px" width="50px" />
         </figure>
@@ -37,6 +40,7 @@ import { ref, onMounted } from "vue";
 
 // store imports
 import { useMyProductStore } from "@/stores/MyProductStore";
+import { objectEntries } from "@vueuse/core";
 
 // stores
 const MyProductStore = useMyProductStore();
@@ -44,33 +48,23 @@ const MyProductStore = useMyProductStore();
 // modal
 const showContentModal = ref(false);
 
-// async getProductsFromApi() {
-//   isLoading.value = true;
-//   try {
-//     const response = await axios.get("https://fakestoreapi.com/products/", {
-//       headers: {
-//         "Content-Type": "application/json",
-//         // Add other headers as needed
-//       },
-//     });
-//     console.log("response", response);
-//     myProducts.value = response;
-//     this.products =
+const getDataOfProducts = MyProductStore.myProducts;
 
-//   } catch (error) {
-//     console.error(error);
-//   }
-//   finally{
-//    this.isLoading = false;
+// const getIdFromProducts = () => {
+//   for (const i = 0; i < getDataOfProducts.length; i++) {
+
 //   }
 // };
+
+const getProductData = (product) => {
+  MyProductStore.productID = product.id;
+
+  MyProductStore.getIdOfIdroducts();
+};
 
 onMounted(() => {
   // getProductsFromApi();
   MyProductStore.getProductsFromApi();
+  MyProductStore.singleProduct = {};
 });
-
-const clickedProduct = (product) => {
-  console.log(product);
-};
 </script>

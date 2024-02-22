@@ -1,14 +1,23 @@
 import { defineStore } from "pinia";
 import axios from "axios";
+import { useStorage } from "@vueuse/core";
 
 export const useMyProductStore = defineStore("myProductStore", {
   state: () => ({
     myProducts: [],
+    // singleProduct: [],
+    productID: useStorage("product-id", null),
     isLoading: false,
+    singleProduct: useStorage("singleProduct", {}),
   }),
-  getters: {},
+  getters: {
+    productid() {
+      return this.productID;
+    },
+  },
   actions: {
     async getProductsFromApi() {
+      console.log("getProductsFromApi");
       this.isLoading = true;
       try {
         const response = await axios.get("https://fakestoreapi.com/products/", {
@@ -26,26 +35,29 @@ export const useMyProductStore = defineStore("myProductStore", {
         this.isLoading = false;
       }
     },
-    // async getIdOfProducts(Id) {
-    //   const idOfProduct = Id;
-    //   try {
-    //     const idResponse = await axios.post(
-    //       "https://fakestoreapi.com/products/",
-    //       idOfProduct,
-    //       {
-    //         headers: {
-    //           "Content-Type": "application/json",
-    //           // Add other headers as needed
-    //         },
-    //       }
-    //     );
-    //     console.log("response", idResponse);
+    async getIdOfIdroducts() {
+      this.isLoading = true;
+      console.log("yoyo", this.productid);
+      try {
+        const idResponse = await axios.get(
+          `https://fakestoreapi.com/products/${this.productid}`,
+          // idOfProduct,
+          // `https://fakestoreapi.com/products/2`
+          {
+            headers: {
+              "Content-Type": "application/json",
+              // Add other headers as needed
+            },
+          }
+        );
+        console.log("response", idResponse);
 
-    //     this.myProducts = idResponse.data.id;
-    //   } catch (error) {
-    //     console.error(error);
-    //   } finally {
-    //   }
-    // },
+        this.singleProduct = idResponse.data;
+      } catch (error) {
+        console.error(error);
+      } finally {
+        this.isLoading = false;
+      }
+    },
   },
 });

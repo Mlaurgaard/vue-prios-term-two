@@ -19,15 +19,15 @@
       </div>
     </div>
     <!-- Buttons -->
-    <pre>{{ myUserStore.myUsers.username }}</pre>
-    <pre>{{ myUserStore.myUsers }}</pre>
+    <!-- <pre>{{ myUserStore.myUsers.username }}</pre>
+    <pre>{{ myUserStore.myUsers }}</pre> -->
 
     <div>
       <div class="mx-auto space-x-7 ml-24 mt-2">
         <button class="ml-1 text-xs btn-link">Forgot password?</button>
         <button
           class="p-2 rounded bg-green-400 active:bg-green-200 text-xs font-semibold"
-          @click="myUserStore.userLogin(userData)"
+          @click="findUser()"
         >
           Login &triangleright;
         </button>
@@ -55,21 +55,20 @@ import { useMyUserStore } from "@/stores/MyUserStore";
 // stores
 const myUserStore = useMyUserStore();
 
-const username = ref(" ");
-
-const password = ref(" ");
 // email: "john@gmail.com", username: "johnd" password: "m38rmF$"
+
 const userData = ref({
   username: "",
   password: "",
 });
 
 const findUser = () => {
-  const users = myUserStore.myUsers;
-  if (users.username == username.value && users.password == password.value) {
-    myUserStore.loginUser();
-  } else {
-    alert("User not found.");
-  }
+  // johnd
+  myUserStore.getUsers.forEach((user) => {
+    if (userData.value.username === user.username) {
+      myUserStore.userObject = user;
+    }
+    // console.log(user.username);
+  });
 };
 </script>
