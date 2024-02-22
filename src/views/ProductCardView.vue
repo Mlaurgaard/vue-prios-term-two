@@ -6,24 +6,27 @@
 
   <div
     v-else-if="!MyProductStore.isLoading"
-    class="card w-96 bg-base-100 shadow-xl"
+    class="card w-96 md:w-10/12 h-auto bg-base-100 shadow-xl mx-auto mt-4"
   >
     <figure>
       <img
         :src="MyProductStore.singleProduct.image"
-        alt="Shoes"
-        height="50px"
-        width="50px"
+        alt="Product"
+        height="100px"
+        width="100px"
       />
     </figure>
     <div class="card-body">
-      <h2 class="card-title line-clamp-2">
+      <h2 class="card-title mx-12 line-clamp-3">
         {{ MyProductStore.singleProduct.title }}
       </h2>
-      <p class="line-clamp-2">
+      <p class="mx-12 pt-4">
         {{ MyProductStore.singleProduct.description }}
       </p>
-      <div class="card-actions justify-end">
+      <div class="card-actions justify-between">
+        <span class="font-bold mt-3"
+          >Rating: {{ MyProductStore.singleProduct.rating.rate }}</span
+        >
         <button class="btn btn-primary">Buy Now</button>
       </div>
     </div>

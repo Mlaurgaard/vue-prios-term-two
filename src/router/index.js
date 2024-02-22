@@ -5,7 +5,7 @@ import AboutView from "@/views/AboutView.vue";
 import UserView from "@/views/UserView.vue";
 import LoginView from "@/views/LoginView.vue";
 import SignupView from "@/views/SignupView.vue";
-import ProductCardsModal from "@/components/features/ProductCardsModal.vue";
+import ProductCardView from "@/views/ProductCardView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -21,9 +21,9 @@ const router = createRouter({
       component: ProductsView,
     },
     {
-      path: "/ProductCardsModal",
+      path: "/ProductCard",
       name: "ProductCard",
-      component: ProductCardsModal,
+      component: ProductCardView,
     },
     {
       path: "/about",

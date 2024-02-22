@@ -5,7 +5,7 @@
     <span class="loading loading-spinner text-neutral"></span>
   </div>
   <div
-    class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-4 mb-10"
+    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-10 mx-auto mt-2"
     v-else-if="!MyProductStore.isLoading"
   >
     <div v-for="product in MyProductStore.myProducts" class="flex">
@@ -18,9 +18,7 @@
         </figure>
         <div class="card-body">
           <h2 class="card-title line-clamp-2">
-            <router-link to="ProductCardsModal">{{
-              product.title
-            }}</router-link>
+            <router-link to="ProductCard">{{ product.title }}</router-link>
           </h2>
           <p class="line-clamp-2">{{ product.description }}</p>
           <div class="card-actions justify-end">
