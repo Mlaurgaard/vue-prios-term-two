@@ -23,8 +23,7 @@
         <div
           class="flex mx-auto underline justify-center lg:flex lg:flex-row lg:h-1/5 lg:mt-4 lg:justify-center text-bold"
         >
-          <!-- {{ myUserStore.getUser.data.username }} -->
-          <!-- <p>{{ userDataFromPinia.lastname }}</p> -->
+          {{ myUserStore.userObject.username }}
         </div>
         <!-- space block -->
         <div class="block my-6 lg:hidden"></div>
@@ -34,10 +33,10 @@
             <div class="flex flex-col w-1/2 lg:w-2/3 lg:flex-col">
               <!-- name -->
               <span class="mt-2 mx-auto lg:my-2">Name</span>
-              <!-- <span class="mx-auto mb-4"
-                >{{ myUserStore.myUsers.data.name.firstname }}
-                {{ myUserStore.myUsers.data.name.lastname }}</span
-              > -->
+              <span class="mx-auto mb-4"
+                >{{ myUserStore.userObject.name.firstname }}
+                {{ myUserStore.userObject.name.lastname }}</span
+              >
               <!-- space block -->
               <!-- <div class="my-2 lg:my-4 lg:block"></div> -->
               <!-- address -->
@@ -49,12 +48,12 @@
             <div class="flex flex-col w-1/2 lg:w-2/3 lg:flex-col">
               <!-- phone -->
               <span class="mt-2 mx-auto lg:my-2">Phone</span>
-              <!-- <span class="mx-auto mb-4">{{
-                myUserStore.myUsers.data.phone
-              }}</span> -->
+              <span class="mx-auto mb-4">{{
+                myUserStore.userObject.phone
+              }}</span>
               <!-- Email -->
-              <!-- <span class="mt-2 mx-auto lg:my-2">Email</span>
-              <span class="mx-auto">{{ myUserStore.myUsers.data.email }}</span> -->
+              <span class="mt-2 mx-auto lg:my-2">Email</span>
+              <span class="mx-auto">{{ myUserStore.userObject.email }}</span>
             </div>
           </div>
           <!-- edit button -->

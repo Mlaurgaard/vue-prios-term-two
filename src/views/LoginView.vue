@@ -32,7 +32,7 @@
           Login &triangleright;
         </button>
       </div>
-      <router-link class="p-2 rounded bg-blue-100" to="/user">User</router-link>
+      <!-- <router-link class="p-2 rounded bg-blue-100" to="/user">User</router-link> -->
     </div>
     <div class="mx-auto my-20">
       <p class="text-sm">
@@ -51,6 +51,7 @@ import { ref, onMounted } from "vue";
 
 // store imports
 import { useMyUserStore } from "@/stores/MyUserStore";
+import router from "@/router";
 
 // stores
 const myUserStore = useMyUserStore();
@@ -63,12 +64,26 @@ const userData = ref({
 });
 
 const findUser = () => {
+  let userAuth = false;
   // johnd
   myUserStore.getUsers.forEach((user) => {
-    if (userData.value.username === user.username) {
+    if (
+      userData.value.username === user.username &&
+      userData.value.password === user.password
+    ) {
       myUserStore.userObject = user;
+      console.log("user found", user);
+      userAuth = true;
+      return;
     }
-    // console.log(user.username);
   });
+  myUserStore.isValid = userAuth;
+
+  if (userAuth) {
+    console.log("Login Successful");
+    router.push({ name: "home" });
+  } else {
+    alert("Invalid Username or Password.");
+  }
 };
 </script>

@@ -39,32 +39,32 @@ export const useMyUserStore = defineStore("myUserStore", {
       } finally {
       }
     },
-    async userLogin(userinfo) {
-      this.isLoading = true;
-      try {
-        const userResponse = await axios.post(
-          "https://fakestoreapi.com/auth/login",
-          userinfo,
-          {
-            headers: {
-              "Content-Type": "application/json",
-              // Add other headers as needed
-            },
-          }
-        );
-        console.log("okeoke", userResponse);
+    // async userLogin(userinfo) {
+    //   this.isLoading = true;
+    //   try {
+    //     const userResponse = await axios.post(
+    //       "https://fakestoreapi.com/auth/login",
+    //       userinfo,
+    //       {
+    //         headers: {
+    //           "Content-Type": "application/json",
+    //           // Add other headers as needed
+    //         },
+    //       }
+    //     );
+    //     console.log("okeoke", userResponse);
 
-        this.userToken = userResponse.data;
-        console.log("token", this.userToken);
-        this.isValid = true;
-        router.push({ name: "home" });
-      } catch (error) {
-        console.error("error", error);
-      } finally {
-        console.log("congrats!");
-        this.isLoading = false;
-      }
-    },
+    //     this.userToken = userResponse.data;
+    //     console.log("token", this.userToken);
+    //     this.isValid = true;
+    //     router.push({ name: "home" });
+    //   } catch (error) {
+    //     console.error("error", error);
+    //   } finally {
+    //     console.log("congrats!");
+    //     this.isLoading = false;
+    //   }
+    // },
     logoutUser() {
       localStorage.clear();
       router.push({ name: "home" });

@@ -24,9 +24,9 @@
         {{ MyProductStore.singleProduct.description }}
       </p>
       <div class="card-actions justify-between">
-        <span class="font-bold mt-3"
+        <!-- <span class="font-bold mt-3"
           >Rating: {{ MyProductStore.singleProduct.rating.rate }}</span
-        >
+        > -->
         <button class="btn btn-primary">Buy Now</button>
       </div>
     </div>
