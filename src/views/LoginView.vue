@@ -86,4 +86,9 @@ const findUser = () => {
     alert("Invalid Username or Password.");
   }
 };
+
+onMounted(() => {
+  // userTest.value = myUserStore.myUsers;
+  myUserStore.getUsersFromApi();
+});
 </script>
