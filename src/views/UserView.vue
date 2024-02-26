@@ -74,7 +74,6 @@
         <thead>
           <tr>
             <th></th>
-            <th></th>
             <th>Product</th>
             <th>Quantity</th>
             <th>Order Date</th>
@@ -82,10 +81,9 @@
           </tr>
         </thead>
         <tbody>
-          <td></td>
           <td>1</td>
-          <td>asihasihj</td>
-          <td>something</td>
+          <td>item 1</td>
+          <td>[1]</td>
           <td>01.01.2024</td>
           <td>19195</td>
         </tbody>
@@ -98,9 +96,12 @@
 // Imports
 import { onMounted, ref } from "vue";
 import { useMyUserStore } from "@/stores/MyUserStore";
+import { useMyProductStore } from "@/stores/MyProductStore";
 
 // Store imports
 const myUserStore = useMyUserStore();
+
+const myProductStore = useMyProductStore();
 
 const testing = () => {
   myUserStore.getUsersFromApi();
