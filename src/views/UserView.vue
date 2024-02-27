@@ -57,7 +57,6 @@
           <!-- edit button -->
         </div>
       </div>
-      <!-- profile name -->
     </div>
   </div>
   <!-- purchases / history -->

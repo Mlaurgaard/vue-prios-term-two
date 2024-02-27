@@ -162,7 +162,7 @@
           </div>
         </div>
         <!-- NAVBAR END -->
-        <!-- Page content here -->
+        <!-- Page content -->
         <RouterView />
         <!-- Footer -->
         <Footer />
@@ -357,23 +357,6 @@ const drawerCheckbox = ref(null);
 const handleClick = () => {
   drawerCheckbox.value.checked = !drawerCheckbox.value.checked;
 };
-
-// const checkIfLoggedIn = ref("");
-
-// const isUserLoggedIn = () => {
-//   const userStatus = localStorage.getItem("isLoggedIn");
-//   if (!userStatus) {
-//     localStorage.setItem("isLoggedIn", false);
-//     const userStatus = localStorage.getItem("isLoggedIn");
-//     checkIfLoggedIn.value = userStatus;
-//   }
-
-//   checkIfLoggedIn.value = userStatus;
-// };
-
-// onMounted(() => {
-//   isUserLoggedIn();
-// });
 </script>
 
 <style scoped>

@@ -8,10 +8,14 @@ export const useMyProductStore = defineStore("myProductStore", {
     productID: useStorage("product-id", null),
     isLoading: false,
     singleProduct: useStorage("singleProduct", {}),
+    purchasedProduct: useStorage("purchased-product", []),
   }),
   getters: {
     productid() {
       return this.productID;
+    },
+    myPurchase() {
+      return this.purchasedProduct;
     },
   },
   actions: {
