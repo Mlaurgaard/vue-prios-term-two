@@ -43,17 +43,6 @@ import { objectEntries } from "@vueuse/core";
 // stores
 const MyProductStore = useMyProductStore();
 
-// modal
-const showContentModal = ref(false);
-
-const getDataOfProducts = MyProductStore.myProducts;
-
-// const getIdFromProducts = () => {
-//   for (const i = 0; i < getDataOfProducts.length; i++) {
-
-//   }
-// };
-
 const getProductData = (product) => {
   MyProductStore.productID = product.id;
 
@@ -61,7 +50,6 @@ const getProductData = (product) => {
 };
 
 onMounted(() => {
-  // getProductsFromApi();
   MyProductStore.getProductsFromApi();
   MyProductStore.singleProduct = {};
 });

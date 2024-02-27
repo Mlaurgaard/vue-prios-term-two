@@ -5,7 +5,6 @@ import { useStorage } from "@vueuse/core";
 export const useMyProductStore = defineStore("myProductStore", {
   state: () => ({
     myProducts: [],
-    // singleProduct: [],
     productID: useStorage("product-id", null),
     isLoading: false,
     singleProduct: useStorage("singleProduct", {}),

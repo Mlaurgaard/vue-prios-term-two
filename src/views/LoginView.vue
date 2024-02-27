@@ -19,8 +19,6 @@
       </div>
     </div>
     <!-- Buttons -->
-    <!-- <pre>{{ myUserStore.myUsers.username }}</pre>
-    <pre>{{ myUserStore.myUsers }}</pre> -->
 
     <div>
       <div class="mx-auto space-x-7 ml-24 mt-2">
@@ -32,7 +30,6 @@
           Login &triangleright;
         </button>
       </div>
-      <!-- <router-link class="p-2 rounded bg-blue-100" to="/user">User</router-link> -->
     </div>
     <div class="mx-auto my-20">
       <p class="text-sm">
@@ -88,7 +85,6 @@ const findUser = () => {
 };
 
 onMounted(() => {
-  // userTest.value = myUserStore.myUsers;
   myUserStore.getUsersFromApi();
 });
 </script>

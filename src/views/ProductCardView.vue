@@ -40,14 +40,4 @@ import { ref, onMounted, computed } from "vue";
 
 // stores
 const MyProductStore = useMyProductStore();
-
-// const getProductId = () => {
-//   // const productID = localStorage.getItem("productID");
-//   // const productID = localStorage.getItem("productID");
-//   // MyProductStore.getIdOfIdroducts(productID);
-// };
-
-// onMounted(() => {
-//   MyProductStore.getIdOfIdroducts();
-// });
 </script>

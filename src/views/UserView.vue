@@ -37,8 +37,6 @@
                 >{{ myUserStore.userObject.name.firstname }}
                 {{ myUserStore.userObject.name.lastname }}</span
               >
-              <!-- space block -->
-              <!-- <div class="my-2 lg:my-4 lg:block"></div> -->
               <!-- address -->
               <span class="mt-2 mx-auto lg:my-2">Address</span>
               <span class="mx-auto">DisplayAdress</span>
@@ -101,31 +99,14 @@ import { useMyProductStore } from "@/stores/MyProductStore";
 // Store imports
 const myUserStore = useMyUserStore();
 
-const myProductStore = useMyProductStore();
+// const myProductStore = useMyProductStore();
 
-const testing = () => {
+const fetchUsers = () => {
   myUserStore.getUsersFromApi();
-  // testingTwo();
 };
-
-// const userDataFromPinia = ref({});
-
-// const testingTwo = () => {
-//   setTimeout(() => {
-//     const userTest = myUserStore.myUsers;
-//     console.log("hallo", userTest);
-//     // userDataFromPinia.value = userTest.name.firstname;
-//     userDataFromPinia.value = {
-//       firstname: userTest.name.firstname,
-//       lastName: userTest.name.lastname,
-//       epicEmail: userTest.email,
-//     };
-//   }, 500);
-// };
 
 // mounts
 onMounted(() => {
-  // userTest.value = myUserStore.myUsers;
-  testing();
+  fetchUsers();
 });
 </script>

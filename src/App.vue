@@ -233,11 +233,43 @@
           </li>
           <!-- Before Login -->
           <li class="mb-0 mt-auto" v-if="myUserStore.isValid == false">
-            <router-link class="my-1 mt-auto" to="/login" @click="handleClick()"
-              >Login
+            <router-link
+              class="my-1 mt-auto"
+              to="/login"
+              @click="handleClick()"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-6 h-6"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M8.25 9V5.25A2.25 2.25 0 0 1 10.5 3h6a2.25 2.25 0 0 1 2.25 2.25v13.5A2.25 2.25 0 0 1 16.5 21h-6a2.25 2.25 0 0 1-2.25-2.25V15M12 9l3 3m0 0-3 3m3-3H2.25"
+                />
+              </svg>
+              Login
             </router-link>
-            <router-link class="my-1" to="/signup" @click="handleClick()"
-              >Sign up
+            <router-link class="my-1" to="/signup" @click="handleClick()">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-6 h-6"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10"
+                />
+              </svg>
+              Sign up
             </router-link>
           </li>
           <!-- After Login -->
@@ -326,22 +358,22 @@ const handleClick = () => {
   drawerCheckbox.value.checked = !drawerCheckbox.value.checked;
 };
 
-const checkIfLoggedIn = ref("");
+// const checkIfLoggedIn = ref("");
 
-const isUserLoggedIn = () => {
-  const userStatus = localStorage.getItem("isLoggedIn");
-  if (!userStatus) {
-    localStorage.setItem("isLoggedIn", false);
-    const userStatus = localStorage.getItem("isLoggedIn");
-    checkIfLoggedIn.value = userStatus;
-  }
+// const isUserLoggedIn = () => {
+//   const userStatus = localStorage.getItem("isLoggedIn");
+//   if (!userStatus) {
+//     localStorage.setItem("isLoggedIn", false);
+//     const userStatus = localStorage.getItem("isLoggedIn");
+//     checkIfLoggedIn.value = userStatus;
+//   }
 
-  checkIfLoggedIn.value = userStatus;
-};
+//   checkIfLoggedIn.value = userStatus;
+// };
 
-onMounted(() => {
-  isUserLoggedIn();
-});
+// onMounted(() => {
+//   isUserLoggedIn();
+// });
 </script>
 
 <style scoped>
