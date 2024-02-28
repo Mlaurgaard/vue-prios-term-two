@@ -27,7 +27,9 @@
         <!-- <span class="font-bold mt-3"
           >Rating: {{ MyProductStore.singleProduct.rating.rate }}</span
         > -->
-        <button class="btn btn-primary">Buy Now</button>
+        <button class="btn btn-primary" @click="clickBuyProduct()">
+          Buy Now
+        </button>
       </div>
     </div>
   </div>
@@ -35,9 +37,17 @@
 
 <script setup>
 // store imports
+import router from "@/router";
 import { useMyProductStore } from "@/stores/MyProductStore";
 import { ref, onMounted, computed } from "vue";
 
 // stores
 const MyProductStore = useMyProductStore();
+
+const clickBuyProduct = () => {
+  MyProductStore.saveProductsToCart();
+  // MyProductStore.putProductInCart();
+  console.log("buyingProduct");
+  router.push({ name: "cart" });
+};
 </script>

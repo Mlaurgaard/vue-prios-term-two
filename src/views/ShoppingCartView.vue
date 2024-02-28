@@ -31,21 +31,17 @@
         <tr>
           <th class="pr-14"></th>
           <th class="pl-5">Product</th>
+          <th>Remove</th>
           <th>Amount</th>
           <th>Price($)</th>
         </tr>
       </thead>
       <!-- product show -->
-      <tbody>
+      <tbody v-for="product in MyProductStore.productArrayInCart">
         <tr>
           <!-- product image -->
           <td class="ml-2">
-            <a
-              ><img
-                :src="MyProductStore.singleProduct.image"
-                alt=""
-                class="h-12 w-12"
-            /></a>
+            <a><img :src="product.image" alt="" class="h-12 w-12" /></a>
           </td>
           <!-- product title w/link -->
           <td class="text-sm ml-1">
@@ -54,8 +50,15 @@
               @click="getProductData(product)"
               class="hover:btn-link"
             >
-              {{ MyProductStore.singleProduct.title.split("Backpack")[0] }}
+              <!-- {{ MyProductStore.productArrayInCart }} -->
+              {{ product.title }}
             </a>
+          </td>
+          <!-- Remove product button -->
+          <td>
+            <button @click="MyProductStore.deleteitemFromCart(product)">
+              delete
+            </button>
           </td>
           <!-- Increase amount -->
           <td>
@@ -69,7 +72,7 @@
             <button class="px-0.5 rounded bg-gray-400">&plus;</button>
           </td>
           <td class="mr-2 text-xs text-center">
-            {{ MyProductStore.singleProduct.price }}
+            {{ product.price }}
           </td>
         </tr>
       </tbody>
@@ -99,10 +102,4 @@ import { useMyProductStore } from "@/stores/MyProductStore";
 
 // stores
 const MyProductStore = useMyProductStore();
-
-// const getProductData = (product) => {
-//   MyProductStore.productID = product.id;
-
-//   MyProductStore.getIdOfIdroducts();
-// };
 </script>

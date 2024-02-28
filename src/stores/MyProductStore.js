@@ -8,14 +8,17 @@ export const useMyProductStore = defineStore("myProductStore", {
     productID: useStorage("product-id", null),
     isLoading: false,
     singleProduct: useStorage("singleProduct", {}),
-    purchasedProduct: useStorage("purchased-product", []),
+    productArrayInCart: useStorage("array-products", []),
   }),
   getters: {
     productid() {
       return this.productID;
     },
-    myPurchase() {
-      return this.purchasedProduct;
+    arrayforproducts() {
+      return this.productArrayInCart;
+    },
+    productbeforecart() {
+      return this.singleProduct;
     },
   },
   actions: {
@@ -61,6 +64,51 @@ export const useMyProductStore = defineStore("myProductStore", {
       } finally {
         this.isLoading = false;
       }
+    },
+    // async putProductInCart() {
+    //   this.isLoading = true;
+    //   console.log("yoyo");
+    //   try {
+    //     const productInCart = await axios.post(
+    //       // `https://fakestoreapi.com/carts/${this.singleProduct}`,
+    //       "https://fakestoreapi.com/carts",
+    //       {
+    //         headers: {
+    //           "Content-Type": "application/json",
+    //           // Add other headers as needed
+    //         },
+    //       }
+    //     );
+    //     console.log("what is this", productInCart);
+
+    //     this.purchasedProducts = productInCart.data;
+    //   } catch (error) {
+    //     console.error(error);
+    //   } finally {
+    //     this.isLoading = false;
+    //   }
+    // },
+    saveProductsToCart() {
+      const pushMyProductToCart = this.productArrayInCart;
+
+      const mySingleProduct = this.singleProduct;
+
+      pushMyProductToCart.push(mySingleProduct);
+
+      console.log("this item is added to the array", pushMyProductToCart);
+    },
+    deleteitemFromCart(product) {
+      // const itemsInCart = this.productArrayInCart;
+      // const checkIfItemIsInCart = itemsInCart.find(
+      //   (item) => item.id === product.id
+      // );
+      // if (checkIfItemIsInCart.amount > 1) {
+      //   checkIfItemIsInCart.amount--;
+      // } else {
+      //   const index = itemsInCart.indexOf(checkIfItemIsInCart);
+      //   checkIfItemIsInCart.splice(index, 1);
+      // }
+      console.log("product", product);
     },
   },
 });
