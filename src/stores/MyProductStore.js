@@ -98,17 +98,20 @@ export const useMyProductStore = defineStore("myProductStore", {
       console.log("this item is added to the array", pushMyProductToCart);
     },
     deleteitemFromCart(product) {
-      // const itemsInCart = this.productArrayInCart;
-      // const checkIfItemIsInCart = itemsInCart.find(
-      //   (item) => item.id === product.id
-      // );
-      // if (checkIfItemIsInCart.amount > 1) {
-      //   checkIfItemIsInCart.amount--;
-      // } else {
-      //   const index = itemsInCart.indexOf(checkIfItemIsInCart);
-      //   checkIfItemIsInCart.splice(index, 1);
-      // }
-      console.log("product", product);
+      const arrayInCart = this.productArrayInCart;
+      const checkIfItemIsInCart = arrayInCart.find(
+        (item) => item.id === product.id
+      );
+      console.log("product", checkIfItemIsInCart);
+    },
+    amountOfItemsInCart(product) {
+      const myArray = this.productArrayInCart;
+      const amountOfItemsToDisplay = myArray.filter(
+        (item) => item.id === product.id
+      );
+      const showAmount = amountOfItemsToDisplay.length;
+      console.log("Amount of product", showAmount);
+      return showAmount;
     },
   },
 });

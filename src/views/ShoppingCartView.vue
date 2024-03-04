@@ -69,7 +69,12 @@
               value="1"
               style="width: 1.1rem"
             />
-            <button class="px-0.5 rounded bg-gray-400">&plus;</button>
+            <button
+              class="px-0.5 rounded bg-gray-400"
+              @click="MyProductStore.amountOfItemsInCart(product)"
+            >
+              &plus;
+            </button>
           </td>
           <td class="mr-2 text-xs text-center">
             {{ product.price }}
