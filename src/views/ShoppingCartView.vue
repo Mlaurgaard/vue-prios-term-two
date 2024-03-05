@@ -22,11 +22,15 @@
     <!-- title -->
     <div class="flex flex-col-2 w-full justify-center font-bolder">Cart</div>
     <!-- no items in cart -->
-    <div class="hidden justify-center font-thin italic">
+    <div
+      class="hidden text-center font-thin italic p-6"
+      v-if="MyProductStore.productArrayInCart.length === 0"
+      style="display: block"
+    >
       Your shopping cart is empty..
     </div>
     <!-- items in cart -->
-    <table class="table">
+    <table class="table" v-show="MyProductStore.productArrayInCart.length > 0">
       <thead>
         <tr class="text-center">
           <th class="pr-14"></th>
@@ -113,7 +117,13 @@
       <button class="rounded bg-red-400 p-2 text-sm" @click="$router.go(-2)">
         &lt; Back
       </button>
-      <button class="rounded bg-green-400 p-2 text-sm">Checkout &gt;</button>
+      <button
+        class="rounded bg-green-400 p-2 text-sm"
+        v-if="MyProductStore.productArrayInCart.length > 0"
+        :disabled="MyProductStore.productArrayInCart.length === 0"
+      >
+        Checkout &gt;
+      </button>
     </div>
   </div>
 </template>
