@@ -92,6 +92,7 @@ export const useMyProductStore = defineStore("myProductStore", {
       const pushMyProductToCart = this.productArrayInCart;
 
       const mySingleProduct = this.singleProduct;
+      mySingleProduct.quantity = 1;
 
       pushMyProductToCart.push(mySingleProduct);
 
@@ -110,14 +111,30 @@ export const useMyProductStore = defineStore("myProductStore", {
       }
       console.log("product", checkIfItemIsInCart);
     },
-    amountOfItemsInCart(product) {
-      const myArray = this.productArrayInCart;
-      const amountOfItemsToDisplay = myArray.filter(
+    increaseAmountOfItemsInCart(product) {
+      const existingProductinCart = this.productArrayInCart.find(
         (item) => item.id === product.id
       );
-      const showAmount = amountOfItemsToDisplay.length;
-      console.log("Amount of product", showAmount);
-      return showAmount;
+      if (existingProductinCart) {
+        existingProductinCart.quantity =
+          (existingProductinCart.quantity || 1) + 1;
+        console.log("Quantity Increased", product.quantity);
+      } else {
+        product.quantity = 1;
+        this.productArrayInCart.push(product);
+        console.log("Adding item to cart");
+      }
+    },
+    decreaseAmountOfItemsInCart(product) {
+      const existingProductinCart = this.productArrayInCart.find(
+        (item) => item.id === product.id
+      );
+      if (existingProductinCart.quantity > 1) {
+        existingProductinCart.quantity--;
+      } else {
+        product.quantity = 1;
+        console.log("Please press the delete button");
+      }
     },
   },
 });

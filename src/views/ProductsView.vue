@@ -21,9 +21,6 @@
             <router-link to="ProductCard">{{ product.title }}</router-link>
           </h2>
           <p class="line-clamp-2">{{ product.description }}</p>
-          <div class="card-actions justify-end">
-            <button class="btn btn-primary">Buy Now</button>
-          </div>
         </div>
       </div>
     </div>

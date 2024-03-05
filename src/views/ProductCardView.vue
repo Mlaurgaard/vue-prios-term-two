@@ -23,11 +23,11 @@
       <p class="mx-12 pt-4">
         {{ MyProductStore.singleProduct.description }}
       </p>
-      <div class="card-actions justify-between">
+      <div class="card-actions justify-end">
         <!-- <span class="font-bold mt-3"
           >Rating: {{ MyProductStore.singleProduct.rating.rate }}</span
         > -->
-        <button class="btn btn-primary" @click="clickBuyProduct()">
+        <button class="p-2 rounded bg-base-300" @click="clickBuyProduct()">
           Buy Now
         </button>
       </div>
