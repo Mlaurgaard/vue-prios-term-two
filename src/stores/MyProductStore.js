@@ -102,6 +102,12 @@ export const useMyProductStore = defineStore("myProductStore", {
       const checkIfItemIsInCart = arrayInCart.find(
         (item) => item.id === product.id
       );
+      if (checkIfItemIsInCart.quantity > 1) {
+        checkIfItemIsInCart.quantity--;
+      } else {
+        const index = arrayInCart.indexOf(checkIfItemIsInCart);
+        arrayInCart.splice(index, 1);
+      }
       console.log("product", checkIfItemIsInCart);
     },
     amountOfItemsInCart(product) {

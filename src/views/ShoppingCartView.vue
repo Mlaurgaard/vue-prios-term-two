@@ -92,7 +92,9 @@
     </table>
     <!-- Buttons -->
     <div class="flex mt-auto mb-4 mx-4 justify-between">
-      <button class="rounded bg-red-400 p-2 text-sm">&lt; Back</button>
+      <button class="rounded bg-red-400 p-2 text-sm" @click="$router.go(-2)">
+        &lt; Back
+      </button>
       <button class="rounded bg-green-400 p-2 text-sm">Checkout &gt;</button>
     </div>
   </div>
