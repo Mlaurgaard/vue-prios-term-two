@@ -34,10 +34,10 @@
       <thead>
         <tr class="text-center">
           <th class="pr-14"></th>
-          <th class="pl-5">Product</th>
+          <th>Product</th>
           <th>Remove</th>
           <th>Amount</th>
-          <th>Price($)</th>
+          <th>Price</th>
         </tr>
       </thead>
       <!-- product show -->
@@ -90,6 +90,7 @@
               type="tel"
               v-model="product.quantity"
               style="width: 1.1rem"
+              readonly
             />
             <button
               class="px-0.5 rounded bg-gray-400"
@@ -98,16 +99,15 @@
               &plus;
             </button>
           </td>
-          <td class="mr-2 text-xs text-center">
-            {{ product.price }}
-          </td>
+          <td class="mr-2 text-xs text-center">{{ product.price }}$</td>
         </tr>
       </tbody>
       <tfoot>
         <tr>
           <td></td>
           <td></td>
-          <td class="font-bold text-xs">Total price:</td>
+          <td></td>
+          <td class="font-bold text-xs">Total:</td>
           <td class="font-bolder text-xs">109.95</td>
         </tr>
       </tfoot>

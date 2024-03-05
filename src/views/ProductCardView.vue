@@ -17,17 +17,23 @@
       />
     </figure>
     <div class="card-body">
-      <h2 class="card-title mx-12 line-clamp-3">
+      <h2 class="card-title mx-12 text-justify text-base">
         {{ MyProductStore.singleProduct.title }}
       </h2>
-      <p class="mx-12 pt-4">
+      <p class="mx-4 pt-2 text-justify text-sm">
         {{ MyProductStore.singleProduct.description }}
       </p>
-      <div class="card-actions justify-end">
-        <!-- <span class="font-bold mt-3"
+      <div class="card-actions justify-between mt-4">
+        <span class="font-bolder p-2"
           >Rating: {{ MyProductStore.singleProduct.rating.rate }}</span
-        > -->
-        <button class="p-2 rounded bg-base-300" @click="clickBuyProduct()">
+        >
+        <span class="font-bolder p-2"
+          >{{ MyProductStore.singleProduct.price }}$</span
+        >
+        <button
+          class="p-2 rounded bg-base-300 hover:bg-slate-200"
+          @click="clickBuyProduct()"
+        >
           Buy Now
         </button>
       </div>
