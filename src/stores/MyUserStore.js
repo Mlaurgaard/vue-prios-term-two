@@ -21,6 +21,9 @@ export const useMyUserStore = defineStore("myUserStore", {
     getUsers() {
       return this.myUsers;
     },
+    getMyUserObject() {
+      return this.userObject;
+    },
   },
   actions: {
     async getUsersFromApi() {

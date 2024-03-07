@@ -134,7 +134,9 @@ import { ref, onMounted } from "vue";
 
 //Store Imports
 import { useMyProductStore } from "@/stores/MyProductStore";
+import { useMyUserStore } from "@/stores/MyUserStore";
 
 // stores
 const MyProductStore = useMyProductStore();
+const myUserStore = useMyUserStore();
 </script>

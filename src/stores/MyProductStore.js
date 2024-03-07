@@ -1,6 +1,7 @@
 import { defineStore } from "pinia";
 import axios from "axios";
 import { useStorage } from "@vueuse/core";
+import { useMyUserStore } from "@/stores/MyUserStore";
 
 export const useMyProductStore = defineStore("myProductStore", {
   state: () => ({
@@ -9,6 +10,7 @@ export const useMyProductStore = defineStore("myProductStore", {
     isLoading: false,
     singleProduct: useStorage("singleProduct", {}),
     productArrayInCart: useStorage("array-products", []),
+    purchasedProducts: useStorage("purchased-products", []),
   }),
   getters: {
     productid() {
@@ -135,6 +137,12 @@ export const useMyProductStore = defineStore("myProductStore", {
         product.quantity = 1;
         console.log("Please press the delete button");
       }
+    },
+    sendProductToPurchaseHistory() {
+      const myUserStore = useMyUserStore();
+      const userId = myUserStore.userObject.id;
+      const shoppingCartProducts = this.productArrayInCart;
+      const purchasedArray = this.purchasedProducts;
     },
   },
 });
