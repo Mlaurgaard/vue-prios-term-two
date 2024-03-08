@@ -1,6 +1,6 @@
 <template>
   <!-- <pre>{{ myProducts }}</pre> -->
-  <div v-if="MyProductStore.isLoading">
+  <div v-if="MyProductStore.isLoading" class="flex w-100 mx-auto my-auto">
     <span>Loading Products...</span>
     <span class="loading loading-spinner text-neutral"></span>
   </div>

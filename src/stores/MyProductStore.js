@@ -19,7 +19,7 @@ export const useMyProductStore = defineStore("myProductStore", {
     arrayforproducts() {
       return this.productArrayInCart;
     },
-    productbeforecart() {
+    getsingleproduct() {
       return this.singleProduct;
     },
   },
@@ -37,18 +37,17 @@ export const useMyProductStore = defineStore("myProductStore", {
         console.log("response", response);
 
         this.myProducts = response.data;
+        this.isLoading = false;
       } catch (error) {
         console.error(error);
-      } finally {
-        this.isLoading = false;
       }
     },
     async getIdOfIdroducts() {
       this.isLoading = true;
-      console.log("yoyo", this.productid);
+      console.log("yoyo", this.productID);
       try {
         const idResponse = await axios.get(
-          `https://fakestoreapi.com/products/${this.productid}`,
+          `https://fakestoreapi.com/products/${this.productID}`,
           // idOfProduct,
           // `https://fakestoreapi.com/products/2`
           {
