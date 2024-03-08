@@ -89,6 +89,17 @@ export const useMyProductStore = defineStore("myProductStore", {
     //     this.isLoading = false;
     //   }
     // },
+    // -----WORK IN PROGRESS----- (to replace getIdOfIdroducts)
+    // sendSingleProductToState() {
+    //   const allOfTheProducts = this.myProducts;
+    //   const getIdFromProduct = this.productID;
+
+    //   const filterProductsforID = allOfTheProducts.filter(
+    //     (product) => product.id === product.id
+    //   );
+
+    //   console.log("this is what", filterProductsforID);
+    // },
     saveProductsToCart() {
       const pushMyProductToCart = this.productArrayInCart;
 

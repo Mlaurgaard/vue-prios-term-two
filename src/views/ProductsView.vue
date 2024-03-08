@@ -25,6 +25,7 @@
       </div>
     </div>
   </div>
+  <pre><button @click="MyProductStore.sendSingleProductToState(product)"> click me</button></pre>
 </template>
 
 <script setup>
