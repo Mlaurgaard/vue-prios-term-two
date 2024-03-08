@@ -43,9 +43,8 @@ export const useMyUserStore = defineStore("myUserStore", {
       }
     },
     logoutUser() {
-      localStorage.clear();
+      this.userObject = {};
       router.push({ name: "home" });
-      console.log("yo");
       this.isValid = false;
     },
   },

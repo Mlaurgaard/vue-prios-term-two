@@ -121,6 +121,7 @@
         class="rounded bg-green-400 p-2 text-sm"
         v-if="MyProductStore.productArrayInCart.length > 0"
         :disabled="MyProductStore.productArrayInCart.length === 0"
+        @click="MyProductStore.sendProductToPurchaseHistory(product)"
       >
         Checkout &gt;
       </button>

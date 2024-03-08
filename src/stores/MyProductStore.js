@@ -138,11 +138,32 @@ export const useMyProductStore = defineStore("myProductStore", {
         console.log("Please press the delete button");
       }
     },
-    sendProductToPurchaseHistory() {
+    sendProductToPurchaseHistory(product) {
       const myUserStore = useMyUserStore();
       const userId = myUserStore.userObject.id;
-      const shoppingCartProducts = this.productArrayInCart;
-      const purchasedArray = this.purchasedProducts;
+
+      const dateOfPurchase = new Date();
+      const day = dateOfPurchase.getDate().toString().padStart(2, "0");
+      const month = (dateOfPurchase.getMonth() + 1).toString().padStart(2, "0");
+      const formattedDate = `${day}.${month}.${
+        dateOfPurchase.getFullYear() % 100
+      }`;
+
+      const shoppingCartProducts = this.productArrayInCart.map((product) => {
+        const orderID = Math.floor(10000 + Math.random() * 90000);
+        return {
+          ...product,
+          userId,
+          purchaseDate: formattedDate,
+          orderID,
+        };
+      });
+
+      this.purchasedProducts.push(...shoppingCartProducts);
+
+      this.productArrayInCart = [];
+
+      console.log("Products purchased", shoppingCartProducts);
     },
   },
 });

@@ -77,12 +77,24 @@
             <th>Order Id</th>
           </tr>
         </thead>
-        <tbody>
-          <td>1</td>
-          <td>item 1</td>
-          <td>[1]</td>
-          <td>01.01.2024</td>
-          <td>19195</td>
+        <tbody v-for="(product, index) in userPurchasedProducts">
+          <!-- number -->
+          <td>{{ index + 1 }}</td>
+          <!-- Image and title -->
+          <td class="flex">
+            <!-- img -->
+            <img :src="product.image" alt="" class="h-6 w-6 my-auto mr-4" />
+            <!-- title -->
+            <span class="line-clamp-1">
+              {{ product.title }}
+            </span>
+          </td>
+          <!-- quantity -->
+          <td class="mx-auto">{{ product.quantity }}</td>
+          <!-- date of purchase -->
+          <td>{{ product.purchaseDate }}</td>
+          <!-- orderID -->
+          <td>{{ product.orderID }}</td>
         </tbody>
       </table>
     </div>
@@ -97,8 +109,11 @@ import { useMyProductStore } from "@/stores/MyProductStore";
 
 // Store imports
 const myUserStore = useMyUserStore();
+const myProductStore = useMyProductStore();
 
-// const myProductStore = useMyProductStore();
+const userPurchasedProducts = myProductStore.purchasedProducts.filter(
+  (product) => product.userId === myUserStore.userObject.id
+);
 
 const fetchUsers = () => {
   myUserStore.getUsersFromApi();
@@ -106,6 +121,7 @@ const fetchUsers = () => {
 
 // mounts
 onMounted(() => {
+  userPurchasedProducts;
   fetchUsers();
 });
 </script>

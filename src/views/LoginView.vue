@@ -53,7 +53,7 @@ import router from "@/router";
 // stores
 const myUserStore = useMyUserStore();
 
-// email: "john@gmail.com", username: "johnd" password: "m38rmF$"
+// email: "john@gmail.com", username: "johnd" password: "m38rmF$  username: "mor_2314" password: 83r5^_"
 
 const userData = ref({
   username: "",
