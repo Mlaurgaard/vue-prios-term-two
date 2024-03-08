@@ -90,13 +90,13 @@ export const useMyProductStore = defineStore("myProductStore", {
     //   }
     // },
     // -----WORK IN PROGRESS----- (to replace getIdOfIdroducts)
-    sendSingleProductToState() {
-      const allOfTheProducts = this.myProducts;
+    // sendSingleProductToState() {
+    //   const allOfTheProducts = this.myProducts;
 
-      const filterProductsforID = allOfTheProducts.map((product) => product.id);
+    //   const filterProductsforID = allOfTheProducts.map((product) => product.id);
 
-      console.log("this is what", filterProductsforID);
-    },
+    //   console.log("this is what", filterProductsforID);
+    // },
     saveProductsToCart() {
       const pushMyProductToCart = this.productArrayInCart;
 
