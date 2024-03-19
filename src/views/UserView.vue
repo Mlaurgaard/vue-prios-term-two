@@ -85,7 +85,7 @@
             <!-- img -->
             <img :src="product.image" alt="" class="h-6 w-6 my-auto mr-4" />
             <!-- title -->
-            <span class="line-clamp-1">
+            <span class="line-clamp-1" @click="">
               {{ product.title }}
             </span>
           </td>
@@ -99,6 +99,21 @@
       </table>
     </div>
   </section>
+  <div
+    class="hidden text-center font-thin italic p-6"
+    v-if="myProductStore.purchasedProducts.length === 0"
+    style="display: block"
+  >
+    No purchase history found
+  </div>
+  <div class="flex" v-show="myProductStore.purchasedProducts.length > 0">
+    <button
+      class="rounded bg-base-300 mx-auto mt-auto mb-2 p-1"
+      @click="clearPurchaseHistory()"
+    >
+      Clear History
+    </button>
+  </div>
 </template>
 
 <script setup>
@@ -117,6 +132,11 @@ const userPurchasedProducts = myProductStore.purchasedProducts.filter(
 
 const fetchUsers = () => {
   myUserStore.getUsersFromApi();
+};
+
+const clearPurchaseHistory = () => {
+  myProductStore.purchasedProducts = [];
+  window.location.reload();
 };
 
 // mounts

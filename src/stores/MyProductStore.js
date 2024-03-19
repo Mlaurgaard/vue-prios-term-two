@@ -2,6 +2,7 @@ import { defineStore } from "pinia";
 import axios from "axios";
 import { useStorage } from "@vueuse/core";
 import { useMyUserStore } from "@/stores/MyUserStore";
+import { ref } from "vue";
 
 export const useMyProductStore = defineStore("myProductStore", {
   state: () => ({
@@ -172,5 +173,10 @@ export const useMyProductStore = defineStore("myProductStore", {
 
       console.log("Products purchased", shoppingCartProducts);
     },
+    // sortPurchaseHistory() {
+    //   const originalOrder = this.purchasedProducts;
+    //   const sortedProducts = ref([]);
+    //   const sortAscending = ref(true);
+    // },
   },
 });
