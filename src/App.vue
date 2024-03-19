@@ -7,7 +7,7 @@
         class="drawer-toggle"
         ref="drawerCheckbox"
       />
-      <div class="drawer-content flex flex-col min-h-screen">
+      <div class="drawer-content flex flex-col min-h-screen bg-base-300">
         <!-- NAVBAR -->
         <div class="navbar shadow-md bg-base-100 h-[64px] z-10">
           <!-- Burger Icon -->

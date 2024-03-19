@@ -173,6 +173,13 @@ export const useMyProductStore = defineStore("myProductStore", {
 
       console.log("Products purchased", shoppingCartProducts);
     },
+    totalCostInCart() {
+      let totalCost = 0;
+      this.productArrayInCart.forEach((product) => {
+        totalCost += (product.price || 0) * (product.quantity || 1);
+      });
+      return totalCost;
+    },
     // sortPurchaseHistory() {
     //   const originalOrder = this.purchasedProducts;
     //   const sortedProducts = ref([]);

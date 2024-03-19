@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col mx-auto mt-4 w-full h-auto bg-base-300">
-    <div class="flex flex-col w-full">
+    <div class="flex flex-col">
       <!-- icon -->
       <div class="flex flex-col-1 h-1/6 justify-center mt-2">
         <svg
@@ -99,7 +99,9 @@
               &plus;
             </button>
           </td>
-          <td class="mr-2 text-xs text-center">{{ product.price }}$</td>
+          <td class="mr-2 text-xs text-center">
+            {{ (product.price * product.quantity).toFixed(2) }}$
+          </td>
         </tr>
       </tbody>
       <tfoot>
@@ -108,7 +110,9 @@
           <td></td>
           <td></td>
           <td class="font-bold text-xs">Total:</td>
-          <td class="font-bolder text-xs">109.95</td>
+          <td class="font-bolder text-xs">
+            {{ MyProductStore.totalCostInCart().toFixed(2) }}
+          </td>
         </tr>
       </tfoot>
     </table>
