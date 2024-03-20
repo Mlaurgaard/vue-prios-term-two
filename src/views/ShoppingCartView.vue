@@ -144,6 +144,4 @@ import { useMyUserStore } from "@/stores/MyUserStore";
 // stores
 const MyProductStore = useMyProductStore();
 const myUserStore = useMyUserStore();
-
-const sendProductsToUserView = () => {};
 </script>

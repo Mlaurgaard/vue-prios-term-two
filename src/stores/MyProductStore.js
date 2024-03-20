@@ -3,6 +3,7 @@ import axios from "axios";
 import { useStorage } from "@vueuse/core";
 import { useMyUserStore } from "@/stores/MyUserStore";
 import { ref } from "vue";
+import router from "@/router";
 
 export const useMyProductStore = defineStore("myProductStore", {
   state: () => ({
@@ -49,8 +50,6 @@ export const useMyProductStore = defineStore("myProductStore", {
       try {
         const idResponse = await axios.get(
           `https://fakestoreapi.com/products/${this.productID}`,
-          // idOfProduct,
-          // `https://fakestoreapi.com/products/2`
           {
             headers: {
               "Content-Type": "application/json",
@@ -67,37 +66,15 @@ export const useMyProductStore = defineStore("myProductStore", {
         this.isLoading = false;
       }
     },
-    // async putProductInCart() {
-    //   this.isLoading = true;
-    //   console.log("yoyo");
-    //   try {
-    //     const productInCart = await axios.post(
-    //       // `https://fakestoreapi.com/carts/${this.singleProduct}`,
-    //       "https://fakestoreapi.com/carts",
-    //       {
-    //         headers: {
-    //           "Content-Type": "application/json",
-    //           // Add other headers as needed
-    //         },
-    //       }
-    //     );
-    //     console.log("what is this", productInCart);
-
-    //     this.purchasedProducts = productInCart.data;
-    //   } catch (error) {
-    //     console.error(error);
-    //   } finally {
-    //     this.isLoading = false;
-    //   }
-    // },
     // -----WORK IN PROGRESS----- (to replace getIdOfIdroducts)
     // sendSingleProductToState() {
+    //   // all of the products
     //   const allOfTheProducts = this.myProducts;
-
-    //   const filterProductsforID = allOfTheProducts.map((product) => product.id);
+    //   //
 
     //   console.log("this is what", filterProductsforID);
     // },
+    // ------------temp line break ------------
     saveProductsToCart() {
       const pushMyProductToCart = this.productArrayInCart;
 
@@ -147,9 +124,11 @@ export const useMyProductStore = defineStore("myProductStore", {
       }
     },
     sendProductToPurchaseHistory(product) {
+      // Get user from store, and get userID from current user.
       const myUserStore = useMyUserStore();
       const userId = myUserStore.userObject.id;
 
+      // Get date of purchase (dd.mm.yy format)
       const dateOfPurchase = new Date();
       const day = dateOfPurchase.getDate().toString().padStart(2, "0");
       const month = (dateOfPurchase.getMonth() + 1).toString().padStart(2, "0");
@@ -157,6 +136,16 @@ export const useMyProductStore = defineStore("myProductStore", {
         dateOfPurchase.getFullYear() % 100
       }`;
 
+      // Confirm or cancle Purchase
+      const confirmOrCanclePurchase = confirm(
+        "Please confirm if you want to purchase product(s)."
+      );
+      if (!confirmOrCanclePurchase) {
+        // Do Nothing
+        return;
+      }
+
+      // Add Random OrderID to purchase
       const shoppingCartProducts = this.productArrayInCart.map((product) => {
         const orderID = Math.floor(10000 + Math.random() * 90000);
         return {
@@ -167,11 +156,23 @@ export const useMyProductStore = defineStore("myProductStore", {
         };
       });
 
+      // Push shoppingcart array into new array for purchased products
       this.purchasedProducts.push(...shoppingCartProducts);
 
+      // Empty shoppingcart after purchase
       this.productArrayInCart = [];
 
-      console.log("Products purchased", shoppingCartProducts);
+      // Alert for purchase complete and redirect to userpage or productspage
+      const userDirectionAfterPurchase = confirm(
+        "Thank you for your purchase! Do you wish to proceed to your profile[OK] or continue browsing[Cancel]?"
+      );
+      if (userDirectionAfterPurchase) {
+        // Redirect to user page
+        router.push({ name: "user" });
+      } else {
+        // Redirect to products
+        router.push({ name: "products" });
+      }
     },
     totalCostInCart() {
       let totalCost = 0;

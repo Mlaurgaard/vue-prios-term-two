@@ -1,4 +1,5 @@
 <template>
+  <!-- Page content -->
   <div class="flex w-100 bg-base-300">
     <!-- user card container phone screens -->
     <div
@@ -54,18 +55,13 @@
               <span class="mx-auto">{{ myUserStore.userObject.email }}</span>
             </div>
           </div>
-          <!-- edit button -->
         </div>
       </div>
     </div>
   </div>
   <!-- purchases / history -->
-  <section>
+  <section class="bg-base-100">
     <h2 class="flex justify-center my-2 font-bold">Purchase History</h2>
-    <div role="tablist" class="tabs tabs-lifted tabs-lg">
-      <a role="tab" class="tab tab-active">Recent</a>
-      <a role="tab" class="tab">History</a>
-    </div>
     <div class="overflow-x-auto">
       <table class="table md:table-md lg:table-lg">
         <thead>
@@ -100,16 +96,19 @@
     </div>
   </section>
   <div
-    class="hidden text-center font-thin italic p-6"
+    class="hidden text-center font-thin italic p-6 bg-base-100 h-full"
     v-if="myProductStore.purchasedProducts.length === 0"
     style="display: block"
   >
     No purchase history found
   </div>
-  <div class="flex" v-show="myProductStore.purchasedProducts.length > 0">
+  <div
+    class="flex bg-base-100 h-full"
+    v-show="myProductStore.purchasedProducts.length > 0"
+  >
     <button
-      class="rounded bg-base-300 mx-auto mt-auto mb-2 p-1"
-      @click="clearPurchaseHistory()"
+      class="rounded bg-base-300 mx-auto mt-8 mb-8 p-1"
+      @click="confirmClearHistory()"
     >
       Clear History
     </button>
@@ -134,9 +133,14 @@ const fetchUsers = () => {
   myUserStore.getUsersFromApi();
 };
 
-const clearPurchaseHistory = () => {
-  myProductStore.purchasedProducts = [];
-  window.location.reload();
+const confirmClearHistory = () => {
+  const question = window.confirm("Do you want to clear purchase history?");
+  if (question) {
+    window.location.reload();
+    myProductStore.purchasedProducts = [];
+  } else {
+    // Do nothing
+  }
 };
 
 // mounts
