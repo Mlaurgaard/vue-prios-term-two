@@ -111,7 +111,7 @@
           <td></td>
           <td class="font-bold text-xs">Total:</td>
           <td class="font-bolder text-xs">
-            {{ MyProductStore.totalCostInCart().toFixed(2) }}
+            {{ MyProductStore.totalCostInCart().toFixed(2) }}$
           </td>
         </tr>
       </tfoot>

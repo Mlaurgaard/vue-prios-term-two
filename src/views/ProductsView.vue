@@ -24,7 +24,7 @@
             <img :src="product.image" alt="Shoes" class="bg-cover" />
           </figure>
           <!-- Card Body -->
-          <div class="card-body pb-2">
+          <div class="card-body pb-4">
             <!-- Card Title -->
             <h2 class="card-title line-clamp-2 text-sm">
               {{ product.title }}
@@ -33,12 +33,12 @@
             <p class="line-clamp-2 text-xs">{{ product.description }}</p>
           </div>
         </router-link>
-        <div class="card-body py-2">
+        <!-- Buy button -->
+        <!-- <div class="card-body py-2">
           <button class="rounded p-1 mt-2 ml-auto bg-base-300 text-xs">
             Buy Now
           </button>
-        </div>
-        <!-- Buy button -->
+        </div> -->
       </div>
     </div>
   </div>
