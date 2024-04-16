@@ -27,7 +27,6 @@ export const useMyProductStore = defineStore("myProductStore", {
   },
   actions: {
     async getProductsFromApi() {
-      console.log("getProductsFromApi");
       this.isLoading = true;
       try {
         const response = await axios.get("https://fakestoreapi.com/products/", {
@@ -36,7 +35,6 @@ export const useMyProductStore = defineStore("myProductStore", {
             // Add other headers as needed
           },
         });
-        console.log("response", response);
 
         this.myProducts = response.data;
         this.isLoading = false;
@@ -180,6 +178,19 @@ export const useMyProductStore = defineStore("myProductStore", {
         totalCost += (product.price || 0) * (product.quantity || 1);
       });
       return totalCost;
+    },
+    // carousel
+    latestProductCarousel() {
+      const allTheProducts = this.myProducts;
+      const latestThreeItems = [];
+      for (let i = allTheProducts.length - 1; i >= 0; i--) {
+        latestThreeItems.push(allTheProducts[i]);
+
+        if (latestThreeItems.length === 3) {
+          break;
+        }
+      }
+      return latestThreeItems;
     },
     // sortPurchaseHistory() {
     //   const originalOrder = this.purchasedProducts;
