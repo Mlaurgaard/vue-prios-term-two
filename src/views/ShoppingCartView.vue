@@ -1,5 +1,7 @@
 <template>
-  <div class="flex flex-col mx-auto mt-4 w-full h-auto bg-base-100">
+  <div
+    class="flex flex-col mx-auto mt-4 w-full sm:w-1/2 md:w-1/2 lg:w-2/4 h-auto bg-base-100"
+  >
     <div class="flex flex-col">
       <!-- icon -->
       <div class="flex flex-col-1 h-1/6 justify-center mt-2">

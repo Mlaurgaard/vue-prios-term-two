@@ -77,11 +77,22 @@ export const useMyProductStore = defineStore("myProductStore", {
       const pushMyProductToCart = this.productArrayInCart;
 
       const mySingleProduct = this.singleProduct;
-      mySingleProduct.quantity = 1;
 
-      pushMyProductToCart.push(mySingleProduct);
-
-      console.log("this item is added to the array", pushMyProductToCart);
+      const existingProductIndex = pushMyProductToCart.findIndex(
+        (product) => product.id === mySingleProduct.id
+      );
+      if (existingProductIndex !== -1) {
+        alert("Product already in cart, product quantity increased.");
+        pushMyProductToCart[existingProductIndex].quantity++;
+        console.log(
+          "Quantity of exsisting product increased.",
+          pushMyProductToCart
+        );
+      } else {
+        mySingleProduct.quantity = 1;
+        pushMyProductToCart.push(mySingleProduct);
+        console.log("this item is added to the array", pushMyProductToCart);
+      }
     },
     deleteitemFromCart(product) {
       const arrayInCart = this.productArrayInCart;
