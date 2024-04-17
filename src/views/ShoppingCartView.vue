@@ -50,8 +50,8 @@
           <!-- product title w/link -->
           <td class="text-sm ml-1">
             <a
-              href="Productlink"
-              @click="getProductData(product)"
+              href="ProductCard"
+              @click="getProductId(product)"
               class="hover:btn-link"
             >
               <!-- {{ MyProductStore.productArrayInCart }} -->
@@ -144,4 +144,11 @@ import { useMyUserStore } from "@/stores/MyUserStore";
 // stores
 const MyProductStore = useMyProductStore();
 const myUserStore = useMyUserStore();
+
+// Get Id of Product
+const getProductId = (product) => {
+  MyProductStore.productID = product.id;
+
+  MyProductStore.getIdOfIdroducts();
+};
 </script>
