@@ -1,3 +1,4 @@
+// ------------IMPORTS------------
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "@/views/HomeView.vue";
 import ProductsView from "@/views/ProductsView.vue";
@@ -8,6 +9,7 @@ import SignupView from "@/views/SignupView.vue";
 import ProductCardView from "@/views/ProductCardView.vue";
 import ShoppingCartView from "@/views/ShoppingCartView.vue";
 
+// ------------ROUTER------------
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [

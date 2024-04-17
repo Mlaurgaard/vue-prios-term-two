@@ -1,11 +1,11 @@
+// ------------IMPORTS------------
 import { defineStore } from "pinia";
 import axios from "axios";
 import router from "../router";
 import { useStorage } from "@vueuse/core";
 
-// const route = useRoute();
-
 export const useMyUserStore = defineStore("myUserStore", {
+  // ------------STATE------------
   state: () => ({
     myUsers: useStorage("my-users", {}),
     userToken: useStorage("user-token", {}),
@@ -14,6 +14,7 @@ export const useMyUserStore = defineStore("myUserStore", {
     userStatus: false,
     isLoading: false,
   }),
+  // ------------GETTERS------------
   getters: {
     tokenOfUser() {
       return this.userToken;
@@ -25,6 +26,7 @@ export const useMyUserStore = defineStore("myUserStore", {
       return this.userObject;
     },
   },
+  // ------------ACTIONS------------
   actions: {
     async getUsersFromApi() {
       try {

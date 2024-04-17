@@ -1,3 +1,4 @@
+// ------------IMPORTS------------
 import { defineStore } from "pinia";
 import axios from "axios";
 import { useStorage } from "@vueuse/core";
@@ -6,6 +7,7 @@ import { ref } from "vue";
 import router from "@/router";
 
 export const useMyProductStore = defineStore("myProductStore", {
+  // ------------STATE------------
   state: () => ({
     myProducts: [],
     productID: useStorage("product-id", null),
@@ -14,6 +16,7 @@ export const useMyProductStore = defineStore("myProductStore", {
     productArrayInCart: useStorage("array-products", []),
     purchasedProducts: useStorage("purchased-products", []),
   }),
+  // ------------GETTERS------------
   getters: {
     productid() {
       return this.productID;
@@ -25,6 +28,7 @@ export const useMyProductStore = defineStore("myProductStore", {
       return this.singleProduct;
     },
   },
+  // ------------ACTIONS------------
   actions: {
     async getProductsFromApi() {
       this.isLoading = true;
@@ -44,7 +48,6 @@ export const useMyProductStore = defineStore("myProductStore", {
     },
     async getIdOfIdroducts() {
       this.isLoading = true;
-      console.log("yoyo", this.productID);
       try {
         const idResponse = await axios.get(
           `https://fakestoreapi.com/products/${this.productID}`,
@@ -55,7 +58,6 @@ export const useMyProductStore = defineStore("myProductStore", {
             },
           }
         );
-        console.log("response", idResponse);
 
         this.singleProduct = idResponse.data;
       } catch (error) {
@@ -64,15 +66,7 @@ export const useMyProductStore = defineStore("myProductStore", {
         this.isLoading = false;
       }
     },
-    // -----WORK IN PROGRESS----- (to replace getIdOfIdroducts)
-    // sendSingleProductToState() {
-    //   // all of the products
-    //   const allOfTheProducts = this.myProducts;
-    //   //
-
-    //   console.log("this is what", filterProductsforID);
-    // },
-    // ------------temp line break ------------
+    // ------------Shopping Cart Section------------
     saveProductsToCart() {
       const pushMyProductToCart = this.productArrayInCart;
 
@@ -132,6 +126,7 @@ export const useMyProductStore = defineStore("myProductStore", {
         console.log("Please press the delete button");
       }
     },
+    // This next function became bigger than intented and therefore is commented for easier readability.
     sendProductToPurchaseHistory(product) {
       // Get user from store, and get userID from current user.
       const myUserStore = useMyUserStore();
@@ -190,7 +185,12 @@ export const useMyProductStore = defineStore("myProductStore", {
       });
       return totalCost;
     },
-    // carousel
+    // sortPurchaseHistory() {
+    //   const originalOrder = this.purchasedProducts;
+    //   const sortedProducts = ref([]);
+    //   const sortAscending = ref(true);
+    // },
+    // ------------Home Page Carousel Section------------
     latestProductCarousel() {
       const allTheProducts = this.myProducts;
       const latestThreeItems = [];
@@ -203,10 +203,5 @@ export const useMyProductStore = defineStore("myProductStore", {
       }
       return latestThreeItems;
     },
-    // sortPurchaseHistory() {
-    //   const originalOrder = this.purchasedProducts;
-    //   const sortedProducts = ref([]);
-    //   const sortAscending = ref(true);
-    // },
   },
 });

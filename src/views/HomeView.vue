@@ -1,7 +1,9 @@
 <template>
-  <!-- Slide container -->
-  <h3 class="w-full bg-gray-300 p-2 text-center font-bold">Latest Products</h3>
-  <div class="flex w-full h-80 bg-gray-300 justify-center">
+  <!-- Slide Container -->
+  <h3 class="w-full bg-base-200 p-2 text-center font-bold">Latest Products</h3>
+  <div
+    class="flex w-full h-80 bg-base-200 justify-center border-b-2 drop-shadow-sm"
+  >
     <!-- Slidebutton left -->
     <button
       class="p-6 rounded my-auto left-0 hidden md:block"
@@ -9,7 +11,7 @@
     >
       ❮
     </button>
-    <!-- conainer for main card -->
+    <!-- Conainer for cards -->
     <div class="block carousel my-auto">
       <!-- Cards -->
       <div
@@ -45,23 +47,23 @@
           </router-link>
         </div>
       </div>
-      <!-- Carousel "Wheele"/buttons -->
+      <!-- Carousel "Wheele"/Buttons -->
       <div class="flex justify-center w-full py-2 gap-2">
         <button
           @click="changeSlide(0)"
-          class="btn btn-xs p-5 md:p-3"
-          :class="carouselIndex === 0 ? 'bg-gray-400' : ''"
+          class="btn btn-xs p-5 md:p-3 bg-slate-400"
+          :class="carouselIndex === 0 ? 'bg-gray-200' : ''"
         ></button>
 
         <button
           @click="changeSlide(1)"
-          class="btn btn-xs p-5 md:p-3"
-          :class="carouselIndex === 1 ? 'bg-gray-400' : ''"
+          class="btn btn-xs p-5 md:p-3 bg-slate-400"
+          :class="carouselIndex === 1 ? 'bg-gray-200' : ''"
         ></button>
         <button
           @click="changeSlide(2)"
-          class="btn btn-xs p-5 md:p-3"
-          :class="carouselIndex === 2 ? 'bg-gray-400' : ''"
+          class="btn btn-xs p-5 md:p-3 bg-slate-400"
+          :class="carouselIndex === 2 ? 'bg-gray-200' : ''"
         ></button>
       </div>
     </div>
@@ -76,15 +78,14 @@
 </template>
 
 <script setup>
-// imports
-import router from "@/router";
+// Imports
 import { onMounted, computed, ref } from "vue";
 import { useMyProductStore } from "@/stores/MyProductStore";
 
-// stores
+// Stores
 const MyProductStore = useMyProductStore();
 
-// carousel functions
+// Carousel functions
 const carouselIndex = ref(0);
 
 const forwardSlider = () => {
@@ -131,7 +132,7 @@ const getProductId = (product) => {
   MyProductStore.getIdOfIdroducts();
 };
 
-// computed
+// Computed
 const latestCarouselCards = computed({
   name: "latestCarouselCards",
   get: () => {
