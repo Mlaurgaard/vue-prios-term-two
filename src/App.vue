@@ -337,23 +337,23 @@
 </template>
 
 <script setup>
+// Imports
 import { ref, defineAsyncComponent, computed, onMounted } from "vue";
 import { RouterLink, RouterView } from "vue-router";
-import { useRoute } from "vue-router";
-// store imports
+// Stores
 import { useMyUserStore } from "@/stores/MyUserStore";
 
-// stores
+// Stores
 const myUserStore = useMyUserStore();
 
 const Footer = defineAsyncComponent(() =>
   import("@/components/layout/Footer.vue")
 );
 
-//refs
+// Refs
 const drawerCheckbox = ref(null);
 
-// handle click on navbar mobile
+// Handle Click on Navbar (Phone)
 const handleClick = () => {
   drawerCheckbox.value.checked = !drawerCheckbox.value.checked;
 };

@@ -14,12 +14,9 @@
       <div class="mt-2">
         <p class="text-sm">Password:</p>
         <input class="mb-1" type="password" v-model="userData.password" />
-        <!-- show password -->
-        <!-- <button class=""></button> -->
       </div>
     </div>
     <!-- Buttons -->
-
     <div>
       <div class="mx-auto space-x-7 ml-24 mt-2">
         <button class="ml-1 text-xs btn-link">Forgot password?</button>
@@ -43,14 +40,14 @@
 </template>
 
 <script setup>
-/* Imports */
+// Imports
 import { ref, onMounted } from "vue";
-
-// store imports
-import { useMyUserStore } from "@/stores/MyUserStore";
 import router from "@/router";
 
-// stores
+// Store Imports
+import { useMyUserStore } from "@/stores/MyUserStore";
+
+// Stores
 const myUserStore = useMyUserStore();
 
 // email: "john@gmail.com", username: "johnd" password: "m38rmF$  username: "mor_2314" password: 83r5^_"
@@ -62,14 +59,12 @@ const userData = ref({
 
 const findUser = () => {
   let userAuth = false;
-  // johnd
   myUserStore.getUsers.forEach((user) => {
     if (
       userData.value.username === user.username &&
       userData.value.password === user.password
     ) {
       myUserStore.userObject = user;
-      console.log("user found", user);
       userAuth = true;
       return;
     }
@@ -77,7 +72,8 @@ const findUser = () => {
   myUserStore.isValid = userAuth;
 
   if (userAuth) {
-    console.log("Login Successful");
+    // Change to alert for succressful login??
+    // console.log("Login Successful");
     router.push({ name: "home" });
   } else {
     alert("Invalid Username or Password.");

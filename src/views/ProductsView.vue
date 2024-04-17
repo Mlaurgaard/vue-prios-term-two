@@ -45,24 +45,23 @@
 </template>
 
 <script setup>
-/*
-imports
-*/
+//imports
 import { ref, onMounted } from "vue";
 
-// store imports
+// Store Imports
 import { useMyProductStore } from "@/stores/MyProductStore";
-import { objectEntries } from "@vueuse/core";
 
-// stores
+// Stores
 const MyProductStore = useMyProductStore();
 
+// Functions
 const getProductId = (product) => {
   MyProductStore.productID = product.id;
 
   MyProductStore.getIdOfIdroducts();
 };
 
+// Mounts
 onMounted(() => {
   MyProductStore.getProductsFromApi();
   MyProductStore.singleProduct = {};

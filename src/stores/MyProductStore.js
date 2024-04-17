@@ -99,7 +99,6 @@ export const useMyProductStore = defineStore("myProductStore", {
         const index = arrayInCart.indexOf(checkIfItemIsInCart);
         arrayInCart.splice(index, 1);
       }
-      console.log("product", checkIfItemIsInCart);
     },
     increaseAmountOfItemsInCart(product) {
       const existingProductinCart = this.productArrayInCart.find(
@@ -108,11 +107,9 @@ export const useMyProductStore = defineStore("myProductStore", {
       if (existingProductinCart) {
         existingProductinCart.quantity =
           (existingProductinCart.quantity || 1) + 1;
-        console.log("Quantity Increased", product.quantity);
       } else {
         product.quantity = 1;
         this.productArrayInCart.push(product);
-        console.log("Adding item to cart");
       }
     },
     decreaseAmountOfItemsInCart(product) {
@@ -123,7 +120,7 @@ export const useMyProductStore = defineStore("myProductStore", {
         existingProductinCart.quantity--;
       } else {
         product.quantity = 1;
-        console.log("Please press the delete button");
+        alert("Please press the delete button to remove fully.");
       }
     },
     // This next function became bigger than intented and therefore is commented for easier readability.

@@ -1,11 +1,11 @@
 <template>
   <!-- Page content -->
   <div class="flex w-100 bg-base-300">
-    <!-- user card container phone screens -->
+    <!-- User Card Container (Phone) -->
     <div
       class="flex flex-col h-80 bg-base-100 m-auto my-4 w-80 md:w-6/12 lg:w-9/12 lg:flex-row"
     >
-      <!-- user icon -->
+      <!-- User Icon -->
       <div class="mx-auto lg:my-auto lg:w-1/4 lg:flex lg:justify-center">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -26,7 +26,7 @@
         >
           Profile Page
         </div>
-        <!-- space block -->
+        <!-- Space Block -->
         <div class="block my-6 lg:hidden"></div>
         <!-- right/top side of card -->
         <div class="lg:flex lg:flex-row lg:h-2/3">
@@ -86,7 +86,7 @@
         <tbody v-for="(product, index) in userPurchasedProducts">
           <!-- number -->
           <td>{{ index + 1 }}</td>
-          <!-- Image and title -->
+          <!-- image and title -->
           <td class="flex">
             <!-- img -->
             <img :src="product.image" alt="" class="h-6 w-6 my-auto mr-4" />
@@ -139,6 +139,7 @@ import { useMyProductStore } from "@/stores/MyProductStore";
 const myUserStore = useMyUserStore();
 const myProductStore = useMyProductStore();
 
+// Functions
 const userPurchasedProducts = myProductStore.purchasedProducts.filter(
   (product) => product.userId === myUserStore.userObject.id
 );
@@ -164,7 +165,7 @@ const getProductId = (product) => {
   myProductStore.getIdOfIdroducts();
 };
 
-// mounts
+// Mounts
 onMounted(() => {
   userPurchasedProducts;
   fetchUsers();

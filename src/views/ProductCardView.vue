@@ -45,18 +45,18 @@
 </template>
 
 <script setup>
-// store imports
+// Imports
 import router from "@/router";
-import { useMyProductStore } from "@/stores/MyProductStore";
 import { ref, onMounted, computed } from "vue";
+// Store Imports
+import { useMyProductStore } from "@/stores/MyProductStore";
 
-// stores
+// Stores
 const MyProductStore = useMyProductStore();
 
+// Functions
 const clickBuyProduct = () => {
   MyProductStore.saveProductsToCart();
-  // MyProductStore.putProductInCart();
-  console.log("buyingProduct");
   router.push({ name: "cart" });
 };
 

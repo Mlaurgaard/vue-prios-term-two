@@ -126,7 +126,6 @@ const changeSlide = (targetIndex) => {
 
 // Get ID for Store
 const getProductId = (product) => {
-  console.log("what is this", product);
   MyProductStore.productID = product.id;
 
   MyProductStore.getIdOfIdroducts();
