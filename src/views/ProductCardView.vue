@@ -17,7 +17,7 @@
       />
     </figure>
     <div class="card-body">
-      <h2 class="card-title mx-12 text-justify text-base">
+      <h2 class="card-title mx-auto text-justify text-base">
         {{ MyProductStore.getsingleproduct.title }}
       </h2>
       <p class="mx-4 pt-2 text-justify text-sm">
@@ -39,6 +39,9 @@
       </div>
     </div>
   </div>
+  <button class="rounded p-2 mx-auto mt-4 bg-red-400" @click="goBack()">
+    ❮ Go Back
+  </button>
 </template>
 
 <script setup>
@@ -55,5 +58,9 @@ const clickBuyProduct = () => {
   // MyProductStore.putProductInCart();
   console.log("buyingProduct");
   router.push({ name: "cart" });
+};
+
+const goBack = () => {
+  history.go(-1);
 };
 </script>

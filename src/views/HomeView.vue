@@ -1,13 +1,16 @@
 <template>
   <!-- Slide container -->
   <h3 class="w-full bg-gray-300 p-2 text-center font-bold">Latest Products</h3>
-  <div class="flex w-full h-80 bg-gray-300">
-    <!-- container for button left -->
-    <button class="p-6 rounded m-auto hidden md:block" @click="forwardSlider()">
+  <div class="flex w-full h-80 bg-gray-300 justify-center">
+    <!-- Slidebutton left -->
+    <button
+      class="p-6 rounded my-auto left-0 hidden md:block"
+      @click="forwardSlider()"
+    >
       ❮
     </button>
     <!-- conainer for main card -->
-    <div class="block carousel m-auto">
+    <div class="block carousel my-auto">
       <!-- Cards -->
       <div
         v-for="(carouselCard, carouselCardIndex) in latestCarouselCards"
@@ -16,17 +19,22 @@
         <div
           v-if="carouselCardIndex == carouselIndex"
           id="carouselCardIndex"
-          class="card w-96 bg-base-100 shadow-md"
+          class="card w-96 bg-base-100 shadow-md h-64"
+          @click="getProductId(carouselCard)"
         >
           <router-link to="ProductCard">
             <!-- Card Image -->
-            <figure class="h-14 w-1/4 md:w-24 p-6 mt-2 mx-auto">
-              <img :src="carouselCard.image" alt="Shoes" class="bg-cover" />
+            <figure class="h-18 w-1/4 md:w-24 p-6 mx-auto">
+              <img
+                :src="carouselCard.image"
+                :alt="carouselCard.category"
+                class="bg-cover"
+              />
             </figure>
             <!-- Card Body -->
-            <div class="card-body pb-4">
+            <div class="card-body my-auto">
               <!-- Card Title -->
-              <h2 class="card-title line-clamp-2 text-sm h-12">
+              <h2 class="card-title line-clamp-2 text-sm h-6">
                 {{ carouselCard.title }}
               </h2>
               <!-- Card Description -->
@@ -37,6 +45,7 @@
           </router-link>
         </div>
       </div>
+      <!-- Carousel "Wheele"/buttons -->
       <div class="flex justify-center w-full py-2 gap-2">
         <button
           @click="changeSlide(0)"
@@ -56,9 +65,9 @@
         ></button>
       </div>
     </div>
-    <!-- container for button right -->
+    <!-- Slidebutton right -->
     <button
-      class="p-6 rounded m-auto hidden md:block"
+      class="p-6 rounded my-auto right-0 hidden md:block"
       @click="backwardSlider()"
     >
       ❯
@@ -90,7 +99,6 @@ const forwardSlider = () => {
       carouselIndex.value = 1;
       break;
     default:
-      // Optional: Handle other cases
       break;
   }
 };
@@ -107,7 +115,6 @@ const backwardSlider = () => {
       carouselIndex.value = 0;
       break;
     default:
-      // Optional: Handle other cases
       break;
   }
 };
@@ -116,16 +123,24 @@ const changeSlide = (targetIndex) => {
   carouselIndex.value = targetIndex;
 };
 
+// Get ID for Store
+const getProductId = (product) => {
+  console.log("what is this", product);
+  MyProductStore.productID = product.id;
+
+  MyProductStore.getIdOfIdroducts();
+};
+
 // computed
 const latestCarouselCards = computed({
-  name: "latestCarouselCards", // Name of the computed property
+  name: "latestCarouselCards",
   get: () => {
-    return MyProductStore.latestProductCarousel(); // Assuming latestProductCarousel() returns the desired value
+    return MyProductStore.latestProductCarousel();
   },
 });
 
 onMounted(() => {
   MyProductStore.getProductsFromApi();
-  // MyProductStore.latestProductCarousel();
+  MyProductStore.singleProduct = {};
 });
 </script>

@@ -59,7 +59,6 @@ const MyProductStore = useMyProductStore();
 
 const getProductId = (product) => {
   MyProductStore.productID = product.id;
-  // const  = MyProductStore.myProducts;
 
   MyProductStore.getIdOfIdroducts();
 };
