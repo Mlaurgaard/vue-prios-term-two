@@ -22,9 +22,9 @@
       </div>
       <div class="lg:w-3/4">
         <div
-          class="flex mx-auto underline justify-center lg:flex lg:flex-row lg:h-1/5 lg:mt-4 lg:justify-center text-bold"
+          class="flex mx-auto underline justify-center lg:flex lg:flex-row lg:h-1/5 lg:mt-4 lg:justify-center font-bold"
         >
-          {{ myUserStore.userObject.username }}
+          Profile Page
         </div>
         <!-- space block -->
         <div class="block my-6 lg:hidden"></div>
@@ -32,15 +32,25 @@
         <div class="lg:flex lg:flex-row lg:h-2/3">
           <div class="flex flex-row lg:mx-auto">
             <div class="flex flex-col w-1/2 lg:w-2/3 lg:flex-col">
+              <!-- username -->
+              <span class="mt-2 mx-auto lg:my-2">Username</span>
+              <span class="mx-auto mb-4">{{
+                myUserStore.userObject.username
+              }}</span>
               <!-- name -->
-              <span class="mt-2 mx-auto lg:my-2">Name</span>
-              <span class="mx-auto mb-4"
-                >{{ myUserStore.userObject.name.firstname }}
-                {{ myUserStore.userObject.name.lastname }}</span
-              >
-              <!-- address -->
-              <span class="mt-2 mx-auto lg:my-2">Address</span>
-              <span class="mx-auto">DisplayAdress</span>
+              <span class="mt-2 mx-auto lg:my-2">Full Name</span>
+              <span class="mx-auto">
+                {{
+                  myUserStore.userObject.name.firstname
+                    .charAt(0)
+                    .toUpperCase() +
+                  myUserStore.userObject.name.firstname.slice(1)
+                }}
+                {{
+                  myUserStore.userObject.name.lastname.charAt(0).toUpperCase() +
+                  myUserStore.userObject.name.lastname.slice(1)
+                }}
+              </span>
             </div>
             <div class="mx-24 hidden lg:block"></div>
             <!-- left/bottom side of card -->
