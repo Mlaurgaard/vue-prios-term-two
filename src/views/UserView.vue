@@ -81,9 +81,13 @@
             <!-- img -->
             <img :src="product.image" alt="" class="h-6 w-6 my-auto mr-4" />
             <!-- title -->
-            <span class="line-clamp-1" @click="">
+            <a
+              href="ProductCard"
+              @click="getProductId(product)"
+              class="line-clamp-1 hover:btn-link"
+            >
               {{ product.title }}
-            </span>
+            </a>
           </td>
           <!-- quantity -->
           <td class="mx-auto">{{ product.quantity }}</td>
@@ -141,6 +145,13 @@ const confirmClearHistory = () => {
   } else {
     // Do nothing
   }
+};
+
+// Get Id of Product
+const getProductId = (product) => {
+  myProductStore.productID = product.id;
+
+  myProductStore.getIdOfIdroducts();
 };
 
 // mounts
