@@ -340,7 +340,7 @@
 // Imports
 import { ref, defineAsyncComponent, computed, onMounted } from "vue";
 import { RouterLink, RouterView } from "vue-router";
-// Stores
+// Store Imports
 import { useMyUserStore } from "@/stores/MyUserStore";
 
 // Stores
