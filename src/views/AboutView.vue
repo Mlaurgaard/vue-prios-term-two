@@ -3,7 +3,7 @@
   <h1 class="mx-auto my-4 font-bold text-lg">ABOUT</h1>
   <!-- Table of Content -->
   <div class="mb-4">
-    <div class="ml-4 mb-1 text-sm font-bold underline">Table of content:</div>
+    <div class="ml-5 mb-1 text-sm font-bold underline">Table of content</div>
     <li class="ml-8 text-xs">Introduction</li>
     <li class="ml-8 text-xs">Tools</li>
     <li class="ml-8 text-xs">"placeholder"</li>
@@ -12,24 +12,26 @@
   <!-- Intro Container -->
   <div class="flex flex-col w-full bg-base-200">
     <!-- Intro Title -->
-    <div class="ml-4 md:mx-auto font-bold underline"><p>Introduction</p></div>
+    <div class="ml-4 mt-2 md:mx-auto font-bold underline">
+      <p>Introduction</p>
+    </div>
     <!-- Intro content -->
     <div class="ml-4 md:mx-auto text-sm md:text-center font-bolder">
       <p class="my-2">
-        Hi, my name is Mike and welcome to my very first Vue project!
+        Hello, my name is Mike and welcome to my very first Vue project!
       </p>
       <p>
-        This is a project developed during my apprenticeship for becoming a web
-        developer at Prios Kompetanse AS.
+        This is a project developed during my apprenticeship for web development
+        at Prios Kompetanse AS.
       </p>
       <p class="my-2 mb-4">
-        I decided to try simulating a webstore. I thought this would give me a
-        lot of variety and different types of challenges, based on the list of
-        tasks assigned to me by my mentor. This decision turned out to be more
-        challenging than i would have anticipated, but ended up being both
-        rewarding and fun!
+        For my project I decided to try simulating a webstore. I thought this
+        would give me a lot of variety and different types of challenges, based
+        on the list of tasks assigned to me by my mentors. This decision turned
+        out to be more challenging than i would have anticipated, but ended up
+        being both rewarding and fun!
       </p>
-      <h2 class="font-bold text-sm">My journey into web development:</h2>
+      <h2 class="font-bold text-sm">My journey into web development</h2>
       <p class="my-2">
         My experience with web development prior to this project was a
         introduction class back in 2018, where we learned the basics of HTML,
@@ -64,76 +66,111 @@
     <div class="flex flex-col w-full bg-base-300">
       <!-- Title -->
       <h1 class="ml-4 my-2 md:mx-auto font-bold underline">
-        Development Tools:
+        Development Tools
       </h1>
       <p class="ml-4 mb-4">Develpoment tools used during this project:</p>
       <!-- List of links -->
       <li class="ml-8">
-        <a class="btn-link underline" href="https://vuejs.org/" target="_blank"
-          >Vue3 Composition API &RightTeeArrow;
+        <a
+          class="btn-link underline text-blue-500"
+          href="https://vuejs.org/"
+          target="_blank"
+          >Vue3 Composition API &UpperRightArrow;
         </a>
         <p class="text-sm mb-2">
-          - a progressive JavaScript framework used for building user interfaces
+          - a progressive JavaScript framework used for building user
+          interfaces.
         </p>
       </li>
       <li class="ml-8">
         <a
-          class="btn-link underline"
+          class="btn-link underline text-blue-500"
           href="https://pinia.vuejs.org/"
           target="_blank"
-          >Pinia Store
+          >Pinia Store &UpperRightArrow;
         </a>
         <p class="text-sm mb-2">
           - a state management pattern and library specifically designed for Vue
-          3 applications
+          3 applications.
         </p>
       </li>
       <li class="ml-8">
         <a
-          class="btn-link underline"
+          class="btn-link underline text-blue-500"
           href="https://axios-http.com/"
           target="_blank"
-          >Axios
+          >Axios &UpperRightArrow;
         </a>
         <p class="text-sm mb-2">
           - a popular HTTP client library used for making asynchronous HTTP
-          requests in JavaScript applications
+          requests in JavaScript applications.
         </p>
       </li>
       <li class="ml-8">
         <a
-          class="btn-link underline"
+          class="btn-link underline text-blue-500"
           href="https://fakestoreapi.com/"
           target="_blank"
-          >Fake Store API
+          >Fake Store API &UpperRightArrow;
         </a>
         <p class="text-sm mb-2">
-          - a RESTful API that provides mock data for e-commerce applications
+          - a RESTful API that provides mock data for e-commerce applications.
         </p>
       </li>
       <li class="ml-8">
         <a
-          class="btn-link underline"
+          class="btn-link underline text-blue-500"
           href="https://tailwindcss.com/"
           target="_blank"
-          >Tailwindcss
+          >TailwindCSS &UpperRightArrow;
         </a>
         <p class="text-sm mb-2">
           - a utility-first CSS framework that provides a set of pre-designed
-          utility classes to style web applications
+          utility classes to style web applications.
         </p>
       </li>
       <li class="ml-8">
         <a
-          class="btn-link underline"
+          class="btn-link underline text-blue-500"
           href="https://daisyui.com/"
           target="_blank"
-          >DaisyUI
+          >DaisyUI &UpperRightArrow;
         </a>
         <p class="text-sm mb-2">
-          - a UI component library built on top of Tailwind CSS
+          - a UI component library built on top of TailwindCSS.
         </p>
       </li>
+    </div>
+    <div class="flex flex-col w-full bg-base-200">
+      <h1 class="ml-4 my-2 md:mx-auto font-bold underline">Overview</h1>
+      <h2 class="ml-4 text-sm font-bold">Data & Stores</h2>
+      <p class="ml-4 mb-2 text-sm">
+        The data displayed on this website is imported from "Fake Store API". It
+        is fetched using "Axios" and stored using "Pinia".
+      </p>
+      <h2 class="ml-4 text-sm font-bold">Landing page</h2>
+      <p class="ml-4 text-sm mb-2">
+        Upon entering the website you will find a simple product carousel. The
+        task was to create a "Latest Products" carousel that only displays the
+        last three products added to the array. This was made by importing the
+        product array from the Pinia store and looping through it in reverse.
+        The cards are displayed dynamically by using a v-for and v-if statement.
+        The "Next/Back" buttons were created using switch cases.
+      </p>
+      <h2 class="ml-4 text-sm font-bold">Products Page</h2>
+      <p class="ml-4 text-sm mb-2">
+        On the products page the cards displayed are using the same method from
+        the landing page, using v-for and v-if. However this page has a loading
+        wheel, this is done to ensure that all the imported data has time to be
+        placed on to the page before user interaction (also serves as a good
+        visual feedback for the user). Clicking on one of the product cards will
+        display a larger card which provides additional information such as
+        price, user rating, and the option to purchase.
+      </p>
+      <h2 class="ml-4 text-sm font-bold">Shopping cart</h2>
+      <p class="ml-4 text-sm mb-2">
+        CRUD was used (Create, Read, Update and Delete)
+      </p>
     </div>
   </div>
 
