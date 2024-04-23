@@ -35,11 +35,13 @@ const triggerFunction = () => {
       // console.log("yo", arrayValue);
       // 3. Check if typeA's owns value matches typeB
       if (typeA.owns.includes(value)) {
-        // 4. Push resuly to new Array
+        // 4. Push result to new Array
         matchResults.push(value);
-        console.log(`Match in ${item.objectName}`, matchResults);
       }
     });
+    console.log(`Match in ${item.objectName}`, matchResults);
   });
 };
+
+// ANSWER SHOULD BE B-1 AND C-2
 </script>
