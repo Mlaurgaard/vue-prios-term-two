@@ -8,6 +8,7 @@ import LoginView from "@/views/LoginView.vue";
 import SignupView from "@/views/SignupView.vue";
 import ProductCardView from "@/views/ProductCardView.vue";
 import ShoppingCartView from "@/views/ShoppingCartView.vue";
+import AdditionalAssignmentView from "@/views/AdditionalAssignmentView.vue";
 
 // ------------ROUTER------------
 const router = createRouter({
@@ -52,6 +53,11 @@ const router = createRouter({
       path: "/cart",
       name: "cart",
       component: ShoppingCartView,
+    },
+    {
+      path: "/assignment",
+      name: "assignment",
+      component: AdditionalAssignmentView,
     },
   ],
 });
