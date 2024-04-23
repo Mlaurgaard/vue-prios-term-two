@@ -30,17 +30,19 @@ let matchResults = [];
 const triggerFunction = () => {
   // 1. Iterate(loop) through typeB Array
   typeB.forEach((item) => {
+    let matches = 0;
     //2. Iterate(loop) through each item in the Array
     item.owns.forEach((value) => {
       // console.log("yo", arrayValue);
       // 3. Check if typeA's owns value matches typeB
       if (typeA.owns.includes(value)) {
-        // 4. Push result to new Array
-        matchResults.push(value);
+        matches++;
       }
     });
-    console.log(`Match in ${item.objectName}`, matchResults);
+    // 4. Push result to new Array
+    matchResults.push({ ...item, matches });
   });
+  console.log(matchResults);
 };
 
 // ANSWER SHOULD BE B-1 AND C-2
