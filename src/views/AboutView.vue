@@ -289,7 +289,7 @@
     <!-- Content container -->
     <!-- USERS -->
     <!-- 1 & 2 -->
-    <div class="ml-4 mb-2 pr-1 md:flex md:justify-between">
+    <div class="ml-4 mb-2 pr-2 md:flex md:justify-between">
       <span class="mb-2 text-sm">
         <p class="font-bold">User 1</p>
         <p>Username: johnd</p>
@@ -302,7 +302,7 @@
       </span>
     </div>
     <!-- 3 & 4 -->
-    <div class="ml-4 mb-2 pr-9 md:flex md:justify-between">
+    <div class="ml-4 mb-2 pr-7 md:flex md:justify-between">
       <span class="text-sm">
         <p class="font-bold">User 3</p>
         <p>Username: kevinryan</p>
@@ -328,7 +328,7 @@
       </span>
     </div>
     <!-- 7 & 8 -->
-    <div class="ml-4 mb-2 pr-4 md:flex md:justify-between">
+    <div class="ml-4 mb-2 md:flex md:justify-between">
       <span class="text-sm">
         <p class="font-bold">User 7</p>
         <p>Username: snyder</p>
@@ -341,7 +341,7 @@
       </span>
     </div>
     <!-- 9 & 10 -->
-    <div class="ml-4 mb-4 pr-4 md:flex md:justify-between">
+    <div class="ml-4 mb-4 pr-5 md:flex md:justify-between">
       <span class="text-sm">
         <p class="font-bold">User 9</p>
         <p>Username: kate_h</p>
