@@ -292,12 +292,12 @@
     <div class="ml-4 mb-2 pr-1 md:flex md:justify-between">
       <span class="mb-2 text-sm">
         <p class="font-bold">User 1</p>
-        <p>Email: john@gmail.com</p>
+        <p>Username: johnd</p>
         <p>Password: m38rmF$</p>
       </span>
       <span class="text-sm">
         <p class="font-bold">User 2</p>
-        <p>Email: morrison@gmail.com</p>
+        <p>Username: mor_2314</p>
         <p>Password: 83r5^_</p>
       </span>
     </div>
@@ -305,12 +305,12 @@
     <div class="ml-4 mb-2 pr-9 md:flex md:justify-between">
       <span class="text-sm">
         <p class="font-bold">User 3</p>
-        <p>Email: kevin@gmail.com</p>
+        <p>Username: kevinryan</p>
         <p>Password: kev02937</p>
       </span>
       <span class="text-sm">
         <p class="font-bold">User 4</p>
-        <p>Email: don@gmail.com</p>
+        <p>Username: donero</p>
         <p>Password: ewedon</p>
       </span>
     </div>
@@ -318,12 +318,12 @@
     <div class="ml-4 mb-2 pr-4 md:flex md:justify-between">
       <span class="text-sm">
         <p class="font-bold">User 5</p>
-        <p>Email: derek@gmail.com</p>
+        <p>Username: derek</p>
         <p>Password: jklg*_56</p>
       </span>
       <span class="text-sm">
         <p class="font-bold">User 6</p>
-        <p>Email: david_r@gmail.com</p>
+        <p>Username: david_r</p>
         <p>Password: 3478*#54</p>
       </span>
     </div>
@@ -331,12 +331,12 @@
     <div class="ml-4 mb-2 pr-4 md:flex md:justify-between">
       <span class="text-sm">
         <p class="font-bold">User 7</p>
-        <p>Email: miriam@gmail.com</p>
+        <p>Username: snyder</p>
         <p>Password: f238&@*$</p>
       </span>
       <span class="text-sm">
         <p class="font-bold">User 8</p>
-        <p>Email: william@gmail.com</p>
+        <p>Username: hopkins</p>
         <p>Password: William56$hj</p>
       </span>
     </div>
@@ -344,12 +344,12 @@
     <div class="ml-4 mb-4 pr-4 md:flex md:justify-between">
       <span class="text-sm">
         <p class="font-bold">User 9</p>
-        <p>Email: kate@gmail.com</p>
+        <p>Username: kate_h</p>
         <p>Password: kfejk@*_</p>
       </span>
       <span class="text-sm">
         <p class="font-bold">User 10</p>
-        <p>Email: jimmie@gmail.com</p>
+        <p>Username: jimmie_k</p>
         <p>Password: klein*#%*</p>
       </span>
     </div>
