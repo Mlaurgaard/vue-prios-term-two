@@ -81,6 +81,7 @@ export const useMyProductStore = defineStore("myProductStore", {
       } else {
         mySingleProduct.quantity = 1;
         pushMyProductToCart.push(mySingleProduct);
+      }
     },
     deleteitemFromCart(product) {
       const arrayInCart = this.productArrayInCart;
