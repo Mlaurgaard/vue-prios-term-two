@@ -2,27 +2,28 @@
   <!-- Title -->
   <h1 class="mx-auto my-4 font-bold text-lg">ABOUT</h1>
   <!-- Table of content Background -->
-  <div class="lg:w-1/2 lg:mx-auto lg:pl-2">
+  <div class="lg:w-1/2 lg:mx-auto">
     <!-- Table of Content -->
     <div class="mb-4">
       <div class="ml-5 mb-1 text-sm font-bold underline">Table of content</div>
       <li class="ml-8 text-xs">Introduction</li>
       <li class="ml-8 text-xs">Tools</li>
       <li class="ml-8 text-xs">Overview</li>
-      <li class="ml-8 text-xs">"placeholder"</li>
+      <li class="ml-8 text-xs">List of Users</li>
+      <li class="ml-8 text-xs">Final Thoughts</li>
     </div>
   </div>
   <!-- Intro Container Background -->
   <div class="flex flex-col w-full bg-base-200 lg:mx-auto">
     <!-- Intro Container Content -->
-    <div class="lg:w-1/2 lg:mx-auto lg:text-center">
+    <div class="lg:w-1/2 lg:mx-auto">
       <!-- Intro Title -->
-      <div class="ml-4 mt-2 md:mx-auto font-bold underline">
+      <div class="ml-4 mt-2 md:mx-auto font-bold underline text-center">
         <p>Introduction</p>
       </div>
       <!-- Intro content -->
       <div class="ml-4 md:flex-col text-sm font-bolder">
-        <p class="my-2 text-center">
+        <p class="my-2">
           Hello, my name is Mike and welcome to my very first Vue project!
         </p>
         <p>
@@ -234,65 +235,118 @@
 
   <!-- Displayed Login information container -->
   <div class="lg:w-1/2 lg:mx-auto">
-    <h3 class="my-2 font-bold underline text-center">LIST OF USER LOGINS</h3>
-    <span class="mb-2 text-sm">
-      <p class="font-bold">User 1</p>
-      Email: john@gmail.com <br />
-      Password: m38rmF$
-    </span>
-    <br />
-    <span class="text-sm">
-      <p class="font-bold">User 2</p>
-      Email: morrison@gmail.com <br />
-      Password: 83r5^_
-    </span>
-    <br />
-    <span class="text-sm">
-      <p class="font-bold">User 3</p>
-      Email: kevin@gmail.com <br />
-      Password: kev02937
-    </span>
-    <br />
-    <span class="text-sm">
-      <p class="font-bold">User 4</p>
-      Email: don@gmail.com <br />
-      Password: ewedon
-    </span>
-    <br />
-    <span class="text-sm">
-      <p class="font-bold">User 5</p>
-      Email: derek@gmail.com <br />
-      Password: jklg*_56
-    </span>
-    <br />
-    <span class="text-sm">
-      <p class="font-bold">User 6</p>
-      Email: david_r@gmail.com <br />
-      Password: 3478*#54
-    </span>
-    <br />
-    <span class="text-sm">
-      <p class="font-bold">User 7</p>
-      Email: miriam@gmail.com <br />
-      Password: f238&@*$
-    </span>
-    <br />
-    <span class="text-sm">
-      <p class="font-bold">User 8</p>
-      Email: william@gmail.com <br />
-      Password: William56$hj
-    </span>
-    <br />
-    <span class="text-sm">
-      <p class="font-bold">User 9</p>
-      Email: kate@gmail.com <br />
-      Password: kfejk@*_
-    </span>
-    <br />
-    <span class="text-sm">
-      <p class="font-bold">User 10</p>
-      Email: jimmie@gmail.com <br />
-      Password: klein*#%*
-    </span>
+    <h3 class="my-4 font-bold underline text-center">LIST OF USER LOGINS</h3>
+    <!-- Content container -->
+    <!-- USERS -->
+    <!-- 1 & 2 -->
+    <div class="ml-4 mb-2 pr-1 lg:flex lg:justify-between">
+      <span class="mb-2 text-sm">
+        <p class="font-bold">User 1</p>
+        <p>Email: john@gmail.com</p>
+        <p>Password: m38rmF$</p>
+      </span>
+      <span class="text-sm">
+        <p class="font-bold">User 2</p>
+        <p>Email: morrison@gmail.com</p>
+        <p>Password: 83r5^_</p>
+      </span>
+    </div>
+    <!-- 3 & 4 -->
+    <div class="ml-4 mb-2 pr-9 lg:flex lg:justify-between">
+      <span class="text-sm">
+        <p class="font-bold">User 3</p>
+        <p>Email: kevin@gmail.com</p>
+        <p>Password: kev02937</p>
+      </span>
+      <span class="text-sm">
+        <p class="font-bold">User 4</p>
+        <p>Email: don@gmail.com</p>
+        <p>Password: ewedon</p>
+      </span>
+    </div>
+    <!-- 5 & 6 -->
+    <div class="ml-4 mb-2 pr-4 lg:flex lg:justify-between">
+      <span class="text-sm">
+        <p class="font-bold">User 5</p>
+        <p>Email: derek@gmail.com</p>
+        <p>Password: jklg*_56</p>
+      </span>
+      <span class="text-sm">
+        <p class="font-bold">User 6</p>
+        <p>Email: david_r@gmail.com</p>
+        <p>Password: 3478*#54</p>
+      </span>
+    </div>
+    <!-- 7 & 8 -->
+    <div class="ml-4 mb-2 pr-4 lg:flex lg:justify-between">
+      <span class="text-sm">
+        <p class="font-bold">User 7</p>
+        <p>Email: miriam@gmail.com</p>
+        <p>Password: f238&@*$</p>
+      </span>
+      <span class="text-sm">
+        <p class="font-bold">User 8</p>
+        <p>Email: william@gmail.com</p>
+        <p>Password: William56$hj</p>
+      </span>
+    </div>
+    <!-- 9 & 10 -->
+    <div class="ml-4 mb-4 pr-4 lg:flex lg:justify-between">
+      <span class="text-sm">
+        <p class="font-bold">User 9</p>
+        <p>Email: kate@gmail.com</p>
+        <p>Password: kfejk@*_</p>
+      </span>
+      <span class="text-sm">
+        <p class="font-bold">User 10</p>
+        <p>Email: jimmie@gmail.com</p>
+        <p>Password: klein*#%*</p>
+      </span>
+    </div>
+  </div>
+  <!-- Final Thoughts Background Container -->
+  <div class="flex flex-col w-full bg-base-200">
+    <div class="lg:w-1/2 lg:mx-auto">
+      <!-- Title -->
+      <h1 class="ml-4 my-2 font-bold underline text-center">Final Thoughts</h1>
+      <!-- Final thoughts content container -->
+      <div class="ml-4 md:flex-col text-sm font-bolder">
+        <p>
+          To wrap things up I would like to say thank you for checking out my
+          project!
+        </p>
+        <p class="my-2">
+          It's far from complete, and in my eyes, there is a lot that can be
+          further improved upon. Overall though, I am pretty happy with how it
+          turned out, especially considering I started learning vue close to 5
+          months ago.
+        </p>
+        <p class="my-2">
+          In hindsight I could become better at planning ahead. Being more
+          consistent with the order of attributes, classes and wiriting comments
+          could save a lot of time and headache throughout the development
+          process.
+        </p>
+        <p class="my-2">
+          Although I've only been doing this for a shot amount of time, I have
+          learned a lot and I'm happy to say, I look forward to continuing my
+          journey into web development.
+        </p>
+        <p class="mb-4">- Mike</p>
+      </div>
+    </div>
+  </div>
+  <!-- Sources -->
+  <div class="flex flex-col w-full">
+    <h1 class="my-2 font-bold underline text-center">Sources</h1>
+    <div class="lg:w-1/2 lg:mx-auto lg: text-center">
+      <p>Vue Docs</p>
+      <p>Tailwind Docs</p>
+      <p>Daisyui Docs</p>
+      <p>W3Schools</p>
+      <p>Stackoverflow</p>
+      <p>Mozilla Web Dev</p>
+      <p>ChaptGPT</p>
+    </div>
   </div>
 </template>
