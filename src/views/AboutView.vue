@@ -5,12 +5,49 @@
   <div class="lg:w-1/2 lg:mx-auto">
     <!-- Table of Content -->
     <div class="mb-4">
-      <div class="ml-5 mb-1 text-sm font-bold underline">Table of content</div>
-      <li class="ml-8 text-xs">Introduction</li>
-      <li class="ml-8 text-xs">Tools</li>
-      <li class="ml-8 text-xs">Overview</li>
-      <li class="ml-8 text-xs">List of Users</li>
-      <li class="ml-8 text-xs">Final Thoughts</li>
+      <div class="ml-5 mb-1 text-sm font-bold">Table of content</div>
+      <li
+        class="ml-8 mr-96 text-xs btn-link text-blue-500"
+        role="button"
+        @click="handleClick('intro')"
+      >
+        Introduction
+      </li>
+      <li
+        class="ml-8 mr-96 text-xs btn-link text-blue-500"
+        role="button"
+        @click="handleClick('tools')"
+      >
+        Tools
+      </li>
+      <li
+        class="ml-8 mr-96 text-xs btn-link text-blue-500"
+        role="button"
+        @click="handleClick('overview')"
+      >
+        Overview
+      </li>
+      <li
+        class="ml-8 mr-96 text-xs btn-link text-blue-500"
+        role="button"
+        @click="handleClick('login')"
+      >
+        Login Details
+      </li>
+      <li
+        class="ml-8 mr-96 text-xs btn-link text-blue-500"
+        role="button"
+        @click="handleClick('thoughts')"
+      >
+        Final Thoughts
+      </li>
+      <li
+        class="ml-8 mr-96 text-xs btn-link text-blue-500"
+        role="button"
+        @click="handleClick('source')"
+      >
+        Sources
+      </li>
     </div>
   </div>
   <!-- Intro Container Background -->
@@ -19,7 +56,7 @@
     <div class="lg:w-1/2 lg:mx-auto">
       <!-- Intro Title -->
       <div class="ml-4 mt-2 md:mx-auto font-bold underline text-center">
-        <p>Introduction</p>
+        <p id="intro">Introduction</p>
       </div>
       <!-- Intro content -->
       <div class="ml-4 md:flex-col text-sm font-bolder">
@@ -72,10 +109,12 @@
       <!-- Dev Tools Content -->
       <div class="lg:w-1/2 lg:mx-auto">
         <!-- Title -->
-        <h1 class="ml-4 my-2 md:text-center font-bold underline">
+        <h1 class="ml-4 my-2 md:text-center font-bold underline" id="tools">
           Development Tools
         </h1>
-        <p class="ml-4 mb-4">Develpoment tools used during this project:</p>
+        <p class="ml-4 mb-4 text-sm">
+          Develpoment tools used during this project:
+        </p>
         <!-- List of links -->
         <li class="ml-8">
           <a
@@ -143,7 +182,7 @@
             target="_blank"
             >DaisyUI &UpperRightArrow;
           </a>
-          <p class="text-sm mb-2">
+          <p class="text-sm mb-4">
             - a UI component library built on top of TailwindCSS.
           </p>
         </li>
@@ -153,7 +192,9 @@
     <div class="flex flex-col w-full bg-base-200">
       <!-- Overview Container Content -->
       <div class="lg:w-1/2 lg:mx-auto">
-        <h1 class="ml-4 my-2 font-bold underline text-center">Overview</h1>
+        <h1 class="ml-4 my-2 font-bold underline text-center" id="overview">
+          Overview
+        </h1>
         <h2 class="ml-4 text-sm font-bold">Data & Stores</h2>
         <p class="ml-4 mb-2 text-sm">
           The data displayed on this website is imported from "Fake Store API".
@@ -226,7 +267,7 @@
           added for less screen clutter during testing and showcase, and gave me
           another opportunity for using CRUD.
         </li>
-        <li class="ml-8 mb-2 text-sm">
+        <li class="ml-8 mb-4 text-sm">
           Signout button works and will not clear the users purchase history.
         </li>
       </div>
@@ -234,12 +275,21 @@
   </div>
 
   <!-- Displayed Login information container -->
-  <div class="lg:w-1/2 lg:mx-auto">
-    <h3 class="my-4 font-bold underline text-center">LIST OF USER LOGINS</h3>
+  <div class="md:w-1/2 md:mx-auto">
+    <h3 class="my-4 font-bold underline text-center" id="login">
+      List of Login Details
+    </h3>
+    <!-- User description -->
+    <p class="ml-4 mb-2 text-sm">
+      Below you can find a list of login information. Since you can't make your
+      own user yet, and the users available are fetched from Fake Store, this
+      gives you the opportunity to see the differences displayed on the user
+      page. For example the purchase history and profile information.
+    </p>
     <!-- Content container -->
     <!-- USERS -->
     <!-- 1 & 2 -->
-    <div class="ml-4 mb-2 pr-1 lg:flex lg:justify-between">
+    <div class="ml-4 mb-2 pr-1 md:flex md:justify-between">
       <span class="mb-2 text-sm">
         <p class="font-bold">User 1</p>
         <p>Email: john@gmail.com</p>
@@ -252,7 +302,7 @@
       </span>
     </div>
     <!-- 3 & 4 -->
-    <div class="ml-4 mb-2 pr-9 lg:flex lg:justify-between">
+    <div class="ml-4 mb-2 pr-9 md:flex md:justify-between">
       <span class="text-sm">
         <p class="font-bold">User 3</p>
         <p>Email: kevin@gmail.com</p>
@@ -265,7 +315,7 @@
       </span>
     </div>
     <!-- 5 & 6 -->
-    <div class="ml-4 mb-2 pr-4 lg:flex lg:justify-between">
+    <div class="ml-4 mb-2 pr-4 md:flex md:justify-between">
       <span class="text-sm">
         <p class="font-bold">User 5</p>
         <p>Email: derek@gmail.com</p>
@@ -278,7 +328,7 @@
       </span>
     </div>
     <!-- 7 & 8 -->
-    <div class="ml-4 mb-2 pr-4 lg:flex lg:justify-between">
+    <div class="ml-4 mb-2 pr-4 md:flex md:justify-between">
       <span class="text-sm">
         <p class="font-bold">User 7</p>
         <p>Email: miriam@gmail.com</p>
@@ -291,7 +341,7 @@
       </span>
     </div>
     <!-- 9 & 10 -->
-    <div class="ml-4 mb-4 pr-4 lg:flex lg:justify-between">
+    <div class="ml-4 mb-4 pr-4 md:flex md:justify-between">
       <span class="text-sm">
         <p class="font-bold">User 9</p>
         <p>Email: kate@gmail.com</p>
@@ -308,7 +358,9 @@
   <div class="flex flex-col w-full bg-base-200">
     <div class="lg:w-1/2 lg:mx-auto">
       <!-- Title -->
-      <h1 class="ml-4 my-2 font-bold underline text-center">Final Thoughts</h1>
+      <h1 class="my-2 font-bold underline text-center" id="thoughts">
+        Final Thoughts
+      </h1>
       <!-- Final thoughts content container -->
       <div class="ml-4 md:flex-col text-sm font-bolder">
         <p>
@@ -328,8 +380,8 @@
           process.
         </p>
         <p class="my-2">
-          Although I've only been doing this for a shot amount of time, I have
-          learned a lot and I'm happy to say, I look forward to continuing my
+          Although I've only been doing this for a short amount of time, I have
+          learned a lot and I'm happy to say, I look forward continuing my
           journey into web development.
         </p>
         <p class="mb-4">- Mike</p>
@@ -338,15 +390,88 @@
   </div>
   <!-- Sources -->
   <div class="flex flex-col w-full">
-    <h1 class="my-2 font-bold underline text-center">Sources</h1>
-    <div class="lg:w-1/2 lg:mx-auto lg: text-center">
-      <p>Vue Docs</p>
-      <p>Tailwind Docs</p>
-      <p>Daisyui Docs</p>
-      <p>W3Schools</p>
-      <p>Stackoverflow</p>
-      <p>Mozilla Web Dev</p>
-      <p>ChaptGPT</p>
+    <h1 class="my-2 font-bold underline text-center" id="source">Sources</h1>
+    <div class="mb-4 lg:w-1/2 lg:mx-auto lg: text-center">
+      <p>
+        <a
+          href="https://vuejs.org/guide/introduction.html"
+          target="_blank"
+          class="btn-link underline text-blue-500"
+        >
+          Vue Docs &UpperRightArrow;
+        </a>
+      </p>
+      <p>
+        <a
+          href="https://tailwindcss.com/docs/installation"
+          target="_blank"
+          class="btn-link underline text-blue-500"
+        >
+          TailwindCSS Docs &UpperRightArrow;</a
+        >
+      </p>
+      <p>
+        <a
+          href="https://daisyui.com/components/"
+          target="_blank"
+          class="btn-link underline text-blue-500"
+        >
+          DaisyUI Docs &UpperRightArrow;</a
+        >
+      </p>
+      <p>
+        <a
+          href="https://www.w3schools.com/"
+          target="_blank"
+          class="btn-link underline text-blue-500"
+        >
+          W3Schools &UpperRightArrow;</a
+        >
+      </p>
+      <p>
+        <a
+          href="https://stackoverflow.com/"
+          target="_blank"
+          class="btn-link underline text-blue-500"
+        >
+          Stack Overflow &UpperRightArrow;</a
+        >
+      </p>
+      <p>
+        <a
+          href="https://developer.mozilla.org/en-US/docs/Learn"
+          target="_blank"
+          class="btn-link underline text-blue-500"
+        >
+          Mozilla Web Dev &UpperRightArrow;</a
+        >
+      </p>
+      <p>
+        <a
+          href="https://heroicons.com/"
+          target="_blank"
+          class="btn-link underline text-blue-500"
+        >
+          Heroicons &UpperRightArrow;</a
+        >
+      </p>
     </div>
   </div>
 </template>
+
+<script setup>
+import { ref } from "vue";
+
+const scrollToSection = (sectionId) => {
+  const section = document.getElementById(sectionId);
+  if (section) {
+    section.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+};
+
+const handleClick = (sectionId) => {
+  scrollToSection(sectionId);
+};
+
+const scrollToTop = () => {};
+</script>

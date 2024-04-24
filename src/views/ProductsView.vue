@@ -33,12 +33,6 @@
             <p class="line-clamp-2 text-xs">{{ product.description }}</p>
           </div>
         </router-link>
-        <!-- Buy button -->
-        <!-- <div class="card-body py-2">
-          <button class="rounded p-1 mt-2 ml-auto bg-base-300 text-xs">
-            Buy Now
-          </button>
-        </div> -->
       </div>
     </div>
   </div>

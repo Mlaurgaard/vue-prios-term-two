@@ -182,11 +182,6 @@ export const useMyProductStore = defineStore("myProductStore", {
       });
       return totalCost;
     },
-    // sortPurchaseHistory() {
-    //   const originalOrder = this.purchasedProducts;
-    //   const sortedProducts = ref([]);
-    //   const sortAscending = ref(true);
-    // },
     // ------------Home Page Carousel Section------------
     latestProductCarousel() {
       const allTheProducts = this.myProducts;
