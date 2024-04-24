@@ -36,6 +36,8 @@ export const useMyUserStore = defineStore("myUserStore", {
             // Add other headers as needed
           },
         });
+        // remove log after noting all the users (to use on about page)
+        console.log("response", response.data);
 
         this.myUsers = response.data;
       } catch (error) {

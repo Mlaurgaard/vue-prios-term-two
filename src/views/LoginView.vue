@@ -64,12 +64,14 @@ const findUser = () => {
     ) {
       myUserStore.userObject = user;
       userAuth = true;
+      console.log("find?", user);
       return;
     }
   });
   myUserStore.isValid = userAuth;
-
+  console.log("userAuth", userAuth);
   if (userAuth) {
+    console.log("successful");
     router.push({ name: "home" });
   } else {
     alert("Invalid Username or Password.");
