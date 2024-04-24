@@ -39,6 +39,9 @@
   </div>
   <div class="flex-col md:w-1/3 mx-auto">
     <h1 class="font-bold text-center mb-2">Login Details</h1>
+    <p class="ml-4 mx-auto text-center text-sm italic">
+      (For you to test out different users)
+    </p>
     <div class="ml-4 mb-2 pr-2 md:flex md:justify-between">
       <span class="mb-2 text-sm">
         <p class="font-bold">User 1</p>
