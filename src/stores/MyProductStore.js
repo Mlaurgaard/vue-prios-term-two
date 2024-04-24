@@ -78,15 +78,9 @@ export const useMyProductStore = defineStore("myProductStore", {
       if (existingProductIndex !== -1) {
         alert("Product already in cart, product quantity increased.");
         pushMyProductToCart[existingProductIndex].quantity++;
-        console.log(
-          "Quantity of exsisting product increased.",
-          pushMyProductToCart
-        );
       } else {
         mySingleProduct.quantity = 1;
         pushMyProductToCart.push(mySingleProduct);
-        console.log("this item is added to the array", pushMyProductToCart);
-      }
     },
     deleteitemFromCart(product) {
       const arrayInCart = this.productArrayInCart;

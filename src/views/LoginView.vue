@@ -50,8 +50,6 @@ import { useMyUserStore } from "@/stores/MyUserStore";
 // Stores
 const myUserStore = useMyUserStore();
 
-// email: "john@gmail.com", username: "johnd" password: "m38rmF$  username: "mor_2314" password: 83r5^_"
-
 const userData = ref({
   username: "",
   password: "",
@@ -72,8 +70,6 @@ const findUser = () => {
   myUserStore.isValid = userAuth;
 
   if (userAuth) {
-    // Change to alert for succressful login??
-    // console.log("Login Successful");
     router.push({ name: "home" });
   } else {
     alert("Invalid Username or Password.");
