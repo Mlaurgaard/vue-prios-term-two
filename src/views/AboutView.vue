@@ -286,6 +286,10 @@
       gives you the opportunity to see the differences displayed on the user
       page. For example the purchase history and profile information.
     </p>
+    <p class="ml-4 mb-2 text-sm italic">
+      (NOTE: This information is also displayed on the login page itself for
+      copy/paste convenience.)
+    </p>
     <!-- Content container -->
     <!-- USERS -->
     <!-- 1 & 2 -->

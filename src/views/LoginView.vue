@@ -37,6 +37,73 @@
       </p>
     </div>
   </div>
+  <div class="flex-col md:w-1/3 mx-auto">
+    <h1 class="font-bold text-center mb-2">Login Details</h1>
+    <div class="ml-4 mb-2 pr-2 md:flex md:justify-between">
+      <span class="mb-2 text-sm">
+        <p class="font-bold">User 1</p>
+        <p>Username: johnd</p>
+        <p>Password: m38rmF$</p>
+      </span>
+      <span class="text-sm">
+        <p class="font-bold">User 2</p>
+        <p>Username: mor_2314</p>
+        <p>Password: 83r5^_</p>
+      </span>
+    </div>
+    <!-- 3 & 4 -->
+    <div class="ml-4 mb-2 pr-7 md:flex md:justify-between">
+      <span class="text-sm">
+        <p class="font-bold">User 3</p>
+        <p>Username: kevinryan</p>
+        <p>Password: kev02937</p>
+      </span>
+      <span class="text-sm">
+        <p class="font-bold">User 4</p>
+        <p>Username: donero</p>
+        <p>Password: ewedon</p>
+      </span>
+    </div>
+    <!-- 5 & 6 -->
+    <div class="ml-4 mb-2 pr-4 md:flex md:justify-between">
+      <span class="text-sm">
+        <p class="font-bold">User 5</p>
+        <p>Username: derek</p>
+        <p>Password: jklg*_56</p>
+      </span>
+      <span class="text-sm">
+        <p class="font-bold">User 6</p>
+        <p>Username: david_r</p>
+        <p>Password: 3478*#54</p>
+      </span>
+    </div>
+    <!-- 7 & 8 -->
+    <div class="ml-4 mb-2 md:flex md:justify-between">
+      <span class="text-sm">
+        <p class="font-bold">User 7</p>
+        <p>Username: snyder</p>
+        <p>Password: f238&@*$</p>
+      </span>
+      <span class="text-sm">
+        <p class="font-bold">User 8</p>
+        <p>Username: hopkins</p>
+        <p>Password: William56$hj</p>
+      </span>
+    </div>
+    <!-- 9 & 10 -->
+    <div class="ml-4 mb-4 pr-5 md:flex md:justify-between">
+      <span class="text-sm">
+        <p class="font-bold">User 9</p>
+        <p>Username: kate_h</p>
+        <p>Password: kfejk@*_</p>
+      </span>
+      <span class="text-sm">
+        <p class="font-bold">User 10</p>
+        <p>Username: jimmie_k</p>
+        <p>Password: klein*#%*</p>
+      </span>
+    </div>
+  </div>
 </template>
 
 <script setup>
