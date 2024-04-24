@@ -120,12 +120,14 @@
     class="flex bg-base-100 h-full"
     v-show="myProductStore.purchasedProducts.length > 0"
   >
-    <button
-      class="rounded bg-base-300 mx-auto mt-8 mb-8 p-1"
-      @click="confirmClearHistory()"
-    >
-      Clear History
-    </button>
+    <div class="mx-auto mt-auto">
+      <button
+        class="rounded bg-red-500 mx-auto mt-8 mb-8 p-1"
+        @click="confirmClearHistory()"
+      >
+        Clear History
+      </button>
+    </div>
   </div>
 </template>
 
