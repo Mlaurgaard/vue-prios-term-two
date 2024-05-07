@@ -2,7 +2,7 @@
   <!-- Slide Container -->
   <h3 class="w-full bg-base-200 p-2 text-center font-bold">Latest Products</h3>
   <div
-    class="flex w-full h-80 bg-base-200 justify-center border-b-2 drop-shadow-sm"
+    class="flex w-full h-96 bg-base-200 justify-center border-b-2 drop-shadow-sm"
   >
     <!-- Slidebutton left -->
     <button
@@ -36,11 +36,11 @@
             <!-- Card Body -->
             <div class="card-body my-auto">
               <!-- Card Title -->
-              <h2 class="card-title line-clamp-2 text-sm h-6">
+              <h2 class="card-title line-clamp-2 text-md h-6">
                 {{ carouselCard.title }}
               </h2>
               <!-- Card Description -->
-              <p class="line-clamp-2 text-xs">
+              <p class="line-clamp-2 text-md">
                 {{ carouselCard.description }}
               </p>
             </div>

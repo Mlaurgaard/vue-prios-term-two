@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex flex-col mx-auto mt-4 w-full sm:w-1/2 md:w-1/2 lg:w-2/4 h-auto bg-base-100"
+    class="flex flex-col mx-auto mt-4 w-full sm:w-2/3 md:w-2/3 lg:w-2/5 h-auto bg-base-100"
   >
     <div class="flex flex-col">
       <!-- icon -->
@@ -79,14 +79,16 @@
               </svg>
             </button>
           </td>
-          <!-- Increase amount -->
-          <td>
+          <!-- Change amount -->
+          <td class="">
+            <!-- Decrease -->
             <button
               class="px-0.5 rounded bg-gray-400"
               @click="MyProductStore.decreaseAmountOfItemsInCart(product)"
             >
               &minus;
             </button>
+            <!-- Input Amount -->
             <input
               class="w-10 text-center text-xs"
               type="tel"
@@ -94,6 +96,7 @@
               style="width: 1.1rem"
               readonly
             />
+            <!-- Increase -->
             <button
               class="px-0.5 rounded bg-gray-400"
               @click="MyProductStore.increaseAmountOfItemsInCart(product)"

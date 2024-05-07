@@ -9,7 +9,7 @@
       />
       <div class="drawer-content flex flex-col min-h-screen bg-base-300">
         <!-- NAVBAR -->
-        <div class="navbar shadow-md bg-base-100 h-[64px] z-10">
+        <div class="navbar shadow-md bg-base-100 h-[96px] z-10">
           <!-- Burger Icon -->
           <div class="flex-none lg:hidden">
             <label
@@ -34,7 +34,7 @@
             <!-- Navbar Title -->
             <button class="py-2">
               <router-link to="/">
-                <p class="font-mono">GeneralStore</p>
+                <p class="font-mono text-lg">GeneralStore</p>
               </router-link>
             </button>
           </div>
@@ -44,25 +44,25 @@
             <!-- Navbar Left -->
             <div class="w-auto">
               <!-- title / home -->
-              <button class="p-2 mx-2">
+              <button class="p-4 mx-2">
                 <router-link to="/">
-                  <p class="font-mono">GeneralStore</p>
+                  <p class="font-mono text-lg">GeneralStore</p>
                 </router-link>
               </button>
               <!-- products -->
               <button
-                class="p-2 mx-1 rounded hover:bg-gray-200 active:bg-gray-300 font-bolder"
+                class="p-4 mx-1 rounded hover:bg-gray-200 active:bg-gray-300 font-bolder"
               >
                 <router-link to="/products">
-                  <p class="p-1 px-2 text-sm font-bolder">Products</p>
+                  <p class="p-1 px-2 text-md font-bolder">Products</p>
                 </router-link>
               </button>
               <!-- about -->
               <button
-                class="p-2 mx-1 rounded hover:bg-gray-200 active:bg-gray-300 font-bolder"
+                class="p-4 mx-1 rounded hover:bg-gray-200 active:bg-gray-300 font-bolder"
               >
                 <router-link to="/about">
-                  <p class="p-1 px-2 text-sm font-bolder">About</p>
+                  <p class="p-1 px-2 text-md font-bolder">About</p>
                 </router-link>
               </button>
             </div>
@@ -71,20 +71,20 @@
               <!-- Logged out -->
               <!-- login -->
               <button
-                class="p-2 mx-1 rounded hover:bg-gray-200 active:bg-gray-300 font-bolder"
+                class="p-4 mx-1 rounded hover:bg-gray-200 active:bg-gray-300 font-bolder"
                 v-if="myUserStore.isValid == false"
               >
                 <router-link to="/login">
-                  <p class="p-1 px-1 text-sm font-bolder">Login</p>
+                  <p class="p-1 px-1 text-lg font-bolder">Login</p>
                 </router-link>
               </button>
               <!-- sign up -->
               <button
-                class="p-2 mx-1 rounded hover:bg-gray-200 active:bg-gray-300 font-bolder"
+                class="p-4 mx-1 rounded hover:bg-gray-200 active:bg-gray-300 font-bolder"
                 v-if="myUserStore.isValid == false"
               >
                 <router-link to="/signup">
-                  <p class="p-1 px-1 text-sm font-bolder">Sign up</p>
+                  <p class="p-1 px-1 text-lg font-bolder">Sign up</p>
                 </router-link>
               </button>
               <!-- Logged In -->
@@ -141,7 +141,7 @@
                 v-if="myUserStore.isValid == true"
                 @click="myUserStore.logoutUser()"
               >
-                <p class="p-1 px-1 text-sm font-bolder">
+                <p class="p-1 px-1 text-lg font-bolder">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -174,12 +174,12 @@
           <!-- Sidebar Title -->
           <button class="py-2">
             <router-link to="/">
-              <p class="font-mono">GeneralStore</p>
+              <p class="font-mono text-lg">GeneralStore</p>
             </router-link>
           </button>
           <!-- Sidebar buttons -->
           <li>
-            <router-link class="my-1" to="/" @click="handleClick()">
+            <router-link class="my-1 text-lg" to="/" @click="handleClick()">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -196,7 +196,11 @@
               </svg>
               Home
             </router-link>
-            <router-link class="my-1" to="/products" @click="handleClick()">
+            <router-link
+              class="my-1 text-lg"
+              to="/products"
+              @click="handleClick()"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -213,7 +217,11 @@
               </svg>
               Products</router-link
             >
-            <router-link @click="handleClick()" class="my-1" to="/about">
+            <router-link
+              @click="handleClick()"
+              class="my-1 text-lg"
+              to="/about"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -234,7 +242,7 @@
           <!-- Before Login -->
           <li class="mb-0 mt-auto" v-if="myUserStore.isValid == false">
             <router-link
-              class="my-1 mt-auto"
+              class="my-1 mt-auto text-lg"
               to="/login"
               @click="handleClick()"
             >
@@ -254,7 +262,11 @@
               </svg>
               Login
             </router-link>
-            <router-link class="my-1" to="/signup" @click="handleClick()">
+            <router-link
+              class="my-1 text-lg"
+              to="/signup"
+              @click="handleClick()"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"

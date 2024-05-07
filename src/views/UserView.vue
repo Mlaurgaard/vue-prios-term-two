@@ -3,7 +3,7 @@
   <div class="flex w-100 bg-base-300">
     <!-- User Card Container (Phone) -->
     <div
-      class="flex flex-col h-80 bg-base-100 m-auto my-4 w-80 md:w-6/12 lg:w-9/12 lg:flex-row"
+      class="flex flex-col h-80 bg-base-100 m-auto my-4 w-80 md:w-6/12 lg:w-6/12 lg:flex-row"
     >
       <!-- User Icon -->
       <div class="mx-auto lg:my-auto lg:w-1/4 lg:flex lg:justify-center">

@@ -1,6 +1,6 @@
 <template>
   <!-- Login Container -->
-  <div class="flex flex-col w-96 h-96 bg-base-300 mx-auto my-auto">
+  <div class="flex flex-col w-96 h-96 bg-base-200 mx-auto my-4">
     <h3 class="mx-auto mt-12 font-bold">Log in</h3>
     <!-- Username -->
     <div class="mx-auto mt-6">

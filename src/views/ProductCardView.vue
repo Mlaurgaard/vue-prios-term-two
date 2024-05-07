@@ -6,7 +6,7 @@
 
   <div
     v-else-if="!MyProductStore.isLoading"
-    class="card w-96 md:w-10/12 h-auto bg-base-100 shadow-xl mx-auto mt-4"
+    class="card w-96 md:w-10/12 lg:w-3/6 xl:w-2/6 h-auto bg-base-100 shadow-xl mx-auto mt-4"
   >
     <figure>
       <img
