@@ -14,7 +14,7 @@
           <div class="flex-none lg:hidden">
             <label
               for="my-drawer-3"
-              class="rounded btn-ghost p-1 mr-2"
+              class="rounded btn-ghost p-4 mr-2"
               role="button"
             >
               <svg
@@ -90,7 +90,7 @@
               <!-- Logged In -->
               <!-- shopping cart -->
               <button
-                class="p-2 mx-1 rounded hover:bg-gray-200 active:bg-gray-300 font-bolder"
+                class="p-4 mx-1 rounded hover:bg-gray-200 active:bg-gray-300 font-bolder"
                 v-if="myUserStore.isValid == true"
               >
                 <p class="p-1 px-1">
@@ -114,7 +114,7 @@
               </button>
               <!-- userview -->
               <button
-                class="p-2 mx-1 rounded hover:bg-gray-200 active:bg-gray-300 font-bolder"
+                class="p-4 mx-1 rounded hover:bg-gray-200 active:bg-gray-300 font-bolder"
                 v-if="myUserStore.isValid == true"
                 @click=""
               >
@@ -137,7 +137,7 @@
               </button>
               <!-- logout -->
               <button
-                class="p-2 mx-1 rounded hover:bg-gray-200 active:bg-gray-300 font-bolder"
+                class="p-4 mx-1 rounded hover:bg-gray-200 active:bg-gray-300 font-bolder"
                 v-if="myUserStore.isValid == true"
                 @click="myUserStore.logoutUser()"
               >
