@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex flex-col mx-auto mt-4 w-full sm:w-2/3 md:w-2/3 lg:w-3/5 h-auto bg-base-100"
+    class="flex flex-col mx-auto mt-4 w-full sm:w-2/3 md:w-2/3 lg:w-2/5 h-auto bg-base-100"
   >
     <div class="flex flex-col">
       <!-- icon -->
