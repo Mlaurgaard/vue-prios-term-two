@@ -53,19 +53,19 @@
       <div class="flex justify-center w-full py-2 gap-2">
         <button
           @click="changeSlide(0)"
-          class="btn btn-xs p-5 md:p-3 bg-gray-400"
-          :class="carouselIndex === 0 ? 'bg-black' : ''"
+          class="btn btn-xs p-5 md:p-3"
+          :class="carouselIndex === 0 ? 'bg-black' : 'bg-gray-400'"
         ></button>
 
         <button
           @click="changeSlide(1)"
           class="btn btn-xs p-5 md:p-3 bg-gray-400"
-          :class="carouselIndex === 1 ? 'bg-black' : ''"
+          :class="carouselIndex === 1 ? 'bg-black' : 'bg-gray-400'"
         ></button>
         <button
           @click="changeSlide(2)"
           class="btn btn-xs p-5 md:p-3 bg-gray-400"
-          :class="carouselIndex === 2 ? 'bg-black' : ''"
+          :class="carouselIndex === 2 ? 'bg-black' : 'bg-gray-400'"
         ></button>
       </div>
     </div>
