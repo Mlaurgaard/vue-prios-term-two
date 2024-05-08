@@ -121,6 +121,13 @@
         </tr>
       </tfoot>
     </table>
+    <!-- message for not logged in users -->
+    <div
+      class="m-2 text-xs text-end italic"
+      :class="myUserStore.isValid ? 'hidden' : 'block'"
+    >
+      Login to purchase products.
+    </div>
     <!-- Buttons -->
     <div class="flex mt-auto mb-4 mx-4 justify-between">
       <button class="rounded bg-red-400 p-2 text-sm" @click="goBack()">
@@ -128,8 +135,7 @@
       </button>
       <button
         class="rounded p-2 text-sm"
-        :class="myUserStore.isValid ? 'bg-green-400' : 'bg-gray-400 tooltip'"
-        :data-tip="!myUserStore.isValid ? 'Login to purchase product.' : ''"
+        :class="myUserStore.isValid ? 'bg-green-400' : 'bg-gray-400'"
         v-if="MyProductStore.productArrayInCart.length > 0"
         :disabled="
           MyProductStore.productArrayInCart.length === 0 || !myUserStore.isValid
