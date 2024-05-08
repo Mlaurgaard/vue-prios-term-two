@@ -7,47 +7,27 @@
       <!-- Table of Content -->
       <div class="mb-4">
         <div class="ml-5 mb-1 text-lg font-bold">Table of content</div>
-        <li
-          class="ml-8 mr-96 my-0.5 btn-link text-blue-500"
-          role="button"
-          @click="handleClick('intro')"
-        >
-          Introduction
+        <li class="ml-8 mr-96 my-0.5 btn-link text-blue-500">
+          <span role="button" @click="handleClick('intro')">Introduction </span>
         </li>
-        <li
-          class="ml-8 mr-96 my-0.5 btn-link text-blue-500"
-          role="button"
-          @click="handleClick('tools')"
-        >
-          Tools
+        <li class="ml-8 mr-96 my-0.5 btn-link text-blue-500">
+          <span role="button" @click="handleClick('tools')">Tools </span>
         </li>
-        <li
-          class="ml-8 mr-96 my-0.5 btn-link text-blue-500"
-          role="button"
-          @click="handleClick('overview')"
-        >
-          Overview
+        <li class="ml-8 mr-96 my-0.5 btn-link text-blue-500">
+          <span role="button" @click="handleClick('overview')">Overview </span>
         </li>
-        <li
-          class="ml-8 mr-96 my-0.5 btn-link text-nowrap text-blue-500"
-          role="button"
-          @click="handleClick('login')"
-        >
-          Login Details
+        <li class="ml-8 mr-96 my-0.5 btn-link text-nowrap text-blue-500">
+          <span role="button" @click="handleClick('login')">
+            Login Details
+          </span>
         </li>
-        <li
-          class="ml-8 mr-96 my-0.5 btn-link text-nowrap text-blue-500"
-          role="button"
-          @click="handleClick('thoughts')"
-        >
-          Final Thoughts
+        <li class="ml-8 mr-96 my-0.5 btn-link text-nowrap text-blue-500">
+          <span role="button" @click="handleClick('thoughts')">
+            Final Thoughts
+          </span>
         </li>
-        <li
-          class="ml-8 mr-96 my-0.5 btn-link text-blue-500"
-          role="button"
-          @click="handleClick('source')"
-        >
-          Sources
+        <li class="ml-8 mr-96 my-0.5 btn-link text-blue-500">
+          <span role="button" @click="handleClick('source')"> Sources</span>
         </li>
       </div>
     </div>

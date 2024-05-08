@@ -22,7 +22,7 @@
       </div>
       <div class="lg:w-3/4">
         <div
-          class="flex mx-auto underline justify-center lg:flex lg:flex-row lg:h-1/5 lg:mt-4 lg:justify-center font-bold"
+          class="flex mx-auto justify-center lg:flex lg:flex-row lg:h-1/5 lg:mt-4 lg:justify-center font-bold text-lg"
         >
           Profile Page
         </div>
@@ -33,12 +33,16 @@
           <div class="flex flex-row lg:mx-auto">
             <div class="flex flex-col w-1/2 lg:w-2/3 lg:flex-col">
               <!-- username -->
-              <span class="mt-2 mx-auto lg:my-2">Username</span>
+              <span class="mt-2 mx-auto lg:my-2 font-bold underline"
+                >Username</span
+              >
               <span class="mx-auto mb-4">{{
                 myUserStore.userObject.username
               }}</span>
               <!-- name -->
-              <span class="mt-2 mx-auto lg:my-2">Full Name</span>
+              <span class="mt-2 mx-auto lg:my-2 font-bold underline"
+                >Full Name</span
+              >
               <span class="mx-auto">
                 {{
                   myUserStore.userObject.name.firstname
@@ -56,12 +60,16 @@
             <!-- left/bottom side of card -->
             <div class="flex flex-col w-1/2 lg:w-2/3 lg:flex-col">
               <!-- phone -->
-              <span class="mt-2 mx-auto lg:my-2">Phone</span>
+              <span class="mt-2 mx-auto lg:my-2 font-bold underline"
+                >Phone</span
+              >
               <span class="mx-auto mb-4">{{
                 myUserStore.userObject.phone
               }}</span>
               <!-- Email -->
-              <span class="mt-2 mx-auto lg:my-2">Email</span>
+              <span class="mt-2 mx-auto lg:my-2 font-bold underline"
+                >Email</span
+              >
               <span class="mx-auto">{{ myUserStore.userObject.email }}</span>
             </div>
           </div>

@@ -1,6 +1,8 @@
 <template>
   <!-- Slide Container -->
-  <h3 class="w-full bg-base-200 p-2 text-center font-bold">Latest Products</h3>
+  <h3 class="w-full bg-base-200 p-1 pt-4 text-center text-lg font-bold">
+    Latest Products
+  </h3>
   <div
     class="flex w-full h-96 bg-base-200 justify-center border-b-2 drop-shadow-sm"
   >
@@ -51,19 +53,19 @@
       <div class="flex justify-center w-full py-2 gap-2">
         <button
           @click="changeSlide(0)"
-          class="btn btn-xs p-5 md:p-3 bg-slate-400"
-          :class="carouselIndex === 0 ? 'bg-gray-200' : ''"
+          class="btn btn-xs p-5 md:p-3 bg-gray-400"
+          :class="carouselIndex === 0 ? 'bg-black' : ''"
         ></button>
 
         <button
           @click="changeSlide(1)"
-          class="btn btn-xs p-5 md:p-3 bg-slate-400"
-          :class="carouselIndex === 1 ? 'bg-gray-200' : ''"
+          class="btn btn-xs p-5 md:p-3 bg-gray-400"
+          :class="carouselIndex === 1 ? 'bg-black' : ''"
         ></button>
         <button
           @click="changeSlide(2)"
-          class="btn btn-xs p-5 md:p-3 bg-slate-400"
-          :class="carouselIndex === 2 ? 'bg-gray-200' : ''"
+          class="btn btn-xs p-5 md:p-3 bg-gray-400"
+          :class="carouselIndex === 2 ? 'bg-black' : ''"
         ></button>
       </div>
     </div>

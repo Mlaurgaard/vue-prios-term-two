@@ -31,10 +31,10 @@
           >{{ MyProductStore.getsingleproduct.price }}$</span
         >
         <button
-          class="p-2 rounded bg-base-300 hover:bg-slate-200"
+          class="p-2 rounded bg-green-400 hover:bg-slate-200"
           @click="clickBuyProduct()"
         >
-          Buy Now
+          Buy ❯
         </button>
       </div>
     </div>

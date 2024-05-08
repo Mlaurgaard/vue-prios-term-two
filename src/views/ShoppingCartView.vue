@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex flex-col mx-auto mt-4 w-full sm:w-2/3 md:w-2/3 lg:w-2/5 h-auto bg-base-100"
+    class="flex flex-col mx-auto mt-4 w-full sm:w-2/3 md:w-2/3 lg:w-3/5 h-auto bg-base-100"
   >
     <div class="flex flex-col">
       <!-- icon -->
@@ -123,13 +123,17 @@
     </table>
     <!-- Buttons -->
     <div class="flex mt-auto mb-4 mx-4 justify-between">
-      <button class="rounded bg-red-400 p-2 text-sm" @click="$router.go(-2)">
+      <button class="rounded bg-red-400 p-2 text-sm" @click="goBack()">
         &lt; Back
       </button>
       <button
-        class="rounded bg-green-400 p-2 text-sm"
+        class="rounded p-2 text-sm"
+        :class="myUserStore.isValid ? 'bg-green-400' : 'bg-gray-400 tooltip'"
+        :data-tip="!myUserStore.isValid ? 'Login to purchase product.' : ''"
         v-if="MyProductStore.productArrayInCart.length > 0"
-        :disabled="MyProductStore.productArrayInCart.length === 0"
+        :disabled="
+          MyProductStore.productArrayInCart.length === 0 || !myUserStore.isValid
+        "
         @click="MyProductStore.sendProductToPurchaseHistory(product)"
       >
         Checkout &gt;
@@ -155,5 +159,9 @@ const getProductId = (product) => {
   MyProductStore.productID = product.id;
 
   MyProductStore.getIdOfIdroducts();
+};
+
+const goBack = () => {
+  history.go(-1);
 };
 </script>

@@ -6,7 +6,7 @@
   </div>
   <!-- Card Positionals -->
   <div
-    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 ml-2 px-4 py-4 bg-base-300 w-full"
+    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 ml-2 px-4 lg:px-24 py-4 bg-base-300 w-full"
     v-else-if="!MyProductStore.isLoading"
   >
     <!-- Card -->

@@ -9,7 +9,7 @@
       />
       <div class="drawer-content flex flex-col min-h-screen bg-base-300">
         <!-- NAVBAR -->
-        <div class="navbar shadow-md bg-base-100 h-[96px] z-10">
+        <div class="navbar shadow-md bg-base-100 z-10">
           <!-- Burger Icon -->
           <div class="flex-none lg:hidden">
             <label
