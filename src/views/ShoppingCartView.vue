@@ -80,7 +80,7 @@
             </button>
           </td>
           <!-- Change amount -->
-          <td class="text-center">
+          <td class="text-nowrap lg:text-center">
             <!-- Decrease -->
             <button
               class="px-0.5 rounded bg-gray-400"
