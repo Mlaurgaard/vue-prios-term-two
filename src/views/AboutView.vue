@@ -5,7 +5,7 @@
     <!-- Table of content Background -->
     <div class="lg:w-1/2 lg:mx-auto">
       <!-- Table of Content -->
-      <div class="mb-4">
+      <div class="mb-4 text-left text-nowrap">
         <div class="ml-5 mb-1 text-lg font-bold">Table of content</div>
         <li class="ml-8 mr-96 my-0.5 btn-link text-blue-500">
           <span role="button" @click="handleClick('intro')">Introduction </span>
